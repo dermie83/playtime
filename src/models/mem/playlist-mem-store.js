@@ -14,6 +14,7 @@ export const playlistMemStore = {
   },
 
   async getPlaylistById(id) {
+    console.log(`PlaylistId ${  id}`);
     return playlists.find((playlist) => playlist._id === id);
   },
 
