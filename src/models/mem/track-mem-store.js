@@ -9,14 +9,35 @@ export const trackMemStore = {
 
   async addTrack(playlistId, track) {
     track._id = v4();
-    track.playlistId = playlistId; 
+    track.playlistid = playlistId;
     tracks.push(track);
-    console.log(`trackId ${  track._id}`);
     return track;
   },
 
+  async getTracksByPlaylistId(id) {
+    return tracks.filter((track) => track.playlistid === id);
+  },
+
   async getTrackById(id) {
-    console.log(`TrackId ${  id}`);
     return tracks.find((track) => track._id === id);
+  },
+
+  async getPlaylistTracks(playlistId) {
+    return tracks.filter((track) => track.playlistid === playlistId);
+  },
+
+  async deleteTrack(id) {
+    const index = tracks.findIndex((track) => track._id === id);
+    if (index !== -1) tracks.splice(index, 1);
+  },
+
+  async deleteAllTracks() {
+    tracks = [];
+  },
+
+  async updateTrack(track, updatedTrack) {
+    track.title = updatedTrack.title;
+    track.artist = updatedTrack.artist;
+    track.duration = updatedTrack.duration;
   },
 };
