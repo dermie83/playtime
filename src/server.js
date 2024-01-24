@@ -1,10 +1,16 @@
 import Vision from "@hapi/vision";
 import Hapi from "@hapi/hapi";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Cookie from "@hapi/cookie";
 import path from "path";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
+import { accountsController } from "./controllers/accounts-controller.js";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +21,9 @@ async function init() {
   });
 
   await server.register(Vision);
+  await server.register(Cookie);
+
+  dotenv.config();
 
   server.views({
     engines: {
@@ -27,6 +36,17 @@ async function init() {
     layout: true,
     isCached: false,
   });
+
+  server.auth.strategy("session", "cookie", {
+    cookie: {
+      name: process.env.cookie_name,
+      password: process.env.cookie_password,
+      isSecure: false,
+    },
+    redirectTo: "/",
+    validate: accountsController.validate,
+  });
+  server.auth.default("session");
 
   db.init();
   server.route(webRoutes);

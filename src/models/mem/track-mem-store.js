@@ -36,7 +36,7 @@ export const trackMemStore = {
   },
 
   async updateTrack(track, updatedTrack) {
-    track.title = updatedTrack.title;
+    track.trackTitle = updatedTrack.trackTitle;
     track.artist = updatedTrack.artist;
     track.duration = updatedTrack.duration;
   },

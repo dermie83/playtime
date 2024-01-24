@@ -10,13 +10,20 @@
     {{#each playlist.tracks}}
       <tr>
         <td>
-          {{title}}
+          {{trackTitle}}
         </td>
         <td>
           {{artist}}
         </td>
         <td>
           {{duration}}
+        </td>
+        <td>
+        <a href="/dashboard/deletetrack/{{_id}}" class="button">
+          <span class="icon is-small">
+            <i class="fas fa-trash"></i>
+          </span>
+        </a>
         </td>
       </tr>
     {{/each}}

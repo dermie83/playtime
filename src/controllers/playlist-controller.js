@@ -16,12 +16,21 @@ export const playlistController = {
     handler: async function (request, h) {
       const playlist = await db.playlistStore.getPlaylistById(request.params.id);
       const newTrack = {
-        title: request.payload.title,
+        trackTitle: request.payload.trackTitle,
         artist: request.payload.artist,
         duration: Number(request.payload.duration),
       };
       await db.trackStore.addTrack(playlist._id, newTrack);
       return h.redirect(`/playlist/${playlist._id}`);
+    },
+  },
+
+  deleteTrack: {
+    handler: async function (request, h) {
+      const track = await db.trackStore.getTrackById(request.params.id);
+      // console.log(`Deleting Playlist -- ${playlist._id}`);
+      await db.trackStore.deleteTrackById(track._id);
+      h.redirect("/dashboard");
     },
   },
 };

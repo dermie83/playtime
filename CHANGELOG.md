@@ -1,3 +1,14 @@
+# Playtime Changelog
+
+## version 0.2.0
+
+- about controller + view added
+- introduce track model
+- playlist controller + view & partials added
+- support adding trackApi to playlists
+- introduce sessions
+- associate playlists with userApi
+
 ## version 0.1.0
 
 - added .gitgnore from <https://github.com/github/gitignore>
