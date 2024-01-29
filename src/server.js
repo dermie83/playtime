@@ -1,9 +1,9 @@
 import Vision from "@hapi/vision";
 import Hapi from "@hapi/hapi";
 // eslint-disable-next-line import/no-extraneous-dependencies
+import Joi from "joi";
 import Cookie from "@hapi/cookie";
 import path from "path";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
@@ -22,8 +22,13 @@ async function init() {
 
   await server.register(Vision);
   await server.register(Cookie);
+  server.validator(Joi);
 
-  dotenv.config();
+  const result = dotenv.config();
+  if (result.error) {
+    console.log(result.error.message);
+    process.exit(1);
+  }
 
   server.views({
     engines: {

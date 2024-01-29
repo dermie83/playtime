@@ -10,7 +10,7 @@
     {{#each playlist.tracks}}
       <tr>
         <td>
-          {{trackTitle}}
+          {{title}}
         </td>
         <td>
           {{artist}}
@@ -19,8 +19,7 @@
           {{duration}}
         </td>
         <td>
-        <a href="/playlist/{{../paylist._id}}/deletetrack/{{_id}}" class="button">
-        {{!-- <a href="/dashboard/deletetrack/{{_id}}" class="button"> incorrect --}}
+        <a href="/playlist/{{../playlist._id}}/deletetrack/{{_id}}" class="button">
           <span class="icon is-small">
             <i class="fas fa-trash"></i>
           </span>

@@ -29,6 +29,7 @@ export const trackMemStore = {
   async deleteTrack(id) {
     const index = tracks.findIndex((track) => track._id === id);
     if (index !== -1) tracks.splice(index, 1);
+    console.log(`delete Track ${  id}`);
   },
 
   async deleteAllTracks() {
