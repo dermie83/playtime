@@ -16,7 +16,7 @@ export const UserCredentialsSpec = {
 export const TrackSpec = {
     title: Joi.string().required(),
     artist: Joi.string().required(),
-    duration: Joi.number().required(),
+    duration: Joi.number().allow("").optional(),
     
 };
 
