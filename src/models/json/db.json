@@ -6,6 +6,48 @@
       "email": "dermiemadsen@gmail.com",
       "password": "1234",
       "_id": "bde0c419-683e-4572-a342-cdf48b229f40"
+    },
+    {
+      "firstName": "Maggie",
+      "lastName": "Simpson",
+      "email": "maggie@simpson.com",
+      "password": "secret",
+      "_id": "57fd1d80-8e26-40f3-abbe-d709df2ab870"
+    },
+    {
+      "firstName": "Maggie",
+      "lastName": "Simpson",
+      "email": "maggie@simpson.com",
+      "password": "secret",
+      "_id": "67da3305-b619-40c8-a982-ccb4c8e65d54"
+    },
+    {
+      "firstName": "Maggie",
+      "lastName": "Simpson",
+      "email": "maggie@simpson.com",
+      "password": "secret",
+      "_id": "2534b9d7-35bd-4289-b4fd-812031ed2574"
+    },
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "253f7bba-5568-4e6a-9d5c-4837011d0c80"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "15e41879-59a3-4247-bd12-2003dd64cd44"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "66baa2d2-5c76-4c3e-bf3f-dc66cd1f3671"
     }
   ],
   "playlists": [

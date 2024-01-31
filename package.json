@@ -6,15 +6,18 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "test": "mocha --ui tdd test/**.js -exit"
   },
   "author": "WIT",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^5.0.3",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
+    "mocha": "^10.2.0",
     "prettier": "^3.2.2"
   },
   "dependencies": {
