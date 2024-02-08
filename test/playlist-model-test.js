@@ -1,18 +1,18 @@
 import { assert } from "chai";
 import { db } from "../src/models/db.js";
-import { maggie, testUsers } from "./fixtures.js";
+import { mozart, testPlaylists } from "./fixtures.js";
 
 // assert.equal(2, 2);
 
-suite("User API tests", () => {
+suite("Playlist Model tests", () => {
 
   setup(async () => {
-    db.init();
-    await db.userStore.deleteAll();
-    // for (let i = 0; i < testUsers.length; i += 1) {
-    //   // eslint-disable-next-line no-await-in-loop
-    //   testUsers[i] = await db.userStore.addUser(testUsers[i]);
-    // }
+    db.init("json");
+    await db.playlistStore.deleteAllPlaylists();
+    for (let i = 0; i < testPlaylists.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      testPlaylists[i] = await db.playlistStore.addPlaylist(testPlaylists[i]);
+    }
   });
 
   // test("create a user", async () => {
@@ -69,6 +69,10 @@ suite("User API tests", () => {
   // });
 
   // test("delete One User - success", async () => {
+  //   // for (let i = 0; i < testUsers.length; i += 1) {
+  //   //   // eslint-disable-next-line no-await-in-loop
+  //   //   testUsers[i] = await db.userStore.addUser(testUsers[i]);
+  //   // }
   //   await db.userStore.deleteUserById(testUsers[0]._id);
   //   const returnedUsers = await db.userStore.getAllUsers();
   //   console.log("Returned Users ",returnedUsers);
