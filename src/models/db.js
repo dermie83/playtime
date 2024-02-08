@@ -12,16 +12,16 @@ export const db = {
   trackStore: null,
 
   init(storeType) {
-    switch (storeType){
+    switch (storeType) {
       case "json":
         this.userStore = userJsonStore;
         this.playlistStore = playlistJsonStore;
         this.trackStore = trackJsonStore;
         break;
       default:
-      this.userStore = userMemStore;
-      this.playlistStore = playlistMemStore;
-      this.trackStore = trackMemStore;
+        this.userStore = userMemStore;
+        this.playlistStore = playlistMemStore;
+        this.trackStore = trackMemStore;
     }
   },
 };

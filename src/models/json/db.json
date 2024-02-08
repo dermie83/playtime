@@ -1,35 +1,13 @@
 {
-  "users": [
-    {
-      "firstName": "Marge",
-      "lastName": "Simpson",
-      "email": "marge@simpson.com",
-      "password": "secret",
-      "_id": "d084e4b3-1675-4bfd-80a2-11e5582bc4e2"
-    },
-    {
-      "firstName": "Bart",
-      "lastName": "Simpson",
-      "email": "bart@simpson.com",
-      "password": "secret",
-      "_id": "debed4a1-02ef-49ec-af84-025d0486eb2e"
-    }
-  ],
+  "users": [],
   "playlists": [
     {
-      "userid": "bde0c419-683e-4572-a342-cdf48b229f40",
-      "title": "Senna",
-      "_id": "1e77e5ec-89c3-4137-9281-02f4e7451b7e"
+      "title": "Beethoven Sonatas",
+      "_id": "3bc5f77e-05a5-4697-b1ea-0528b65a14b9"
     },
     {
-      "userid": "bde0c419-683e-4572-a342-cdf48b229f40",
-      "title": "Bella",
-      "_id": "5e0c9574-5e68-4579-8349-48c4103ead77"
-    },
-    {
-      "userid": "fa5405ca-3697-4da9-b041-77988a255bf1",
-      "title": "Dermo",
-      "_id": "9719555e-5254-4664-bcd2-4e9e5f8320e9"
+      "title": "Beethoven Concertos",
+      "_id": "15f6c613-a72e-4146-990b-4bee59d72eee"
     }
   ],
   "tracks": [

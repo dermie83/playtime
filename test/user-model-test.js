@@ -7,12 +7,12 @@ import { maggie, testUsers } from "./fixtures.js";
 suite("User API tests", () => {
 
   setup(async () => {
-    db.init();
+    db.init("json");
     await db.userStore.deleteAll();
-    // for (let i = 0; i < testUsers.length; i += 1) {
-    //   // eslint-disable-next-line no-await-in-loop
-    //   testUsers[i] = await db.userStore.addUser(testUsers[i]);
-    // }
+    for (let i = 0; i < testUsers.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      testUsers[i] = await db.userStore.addUser(testUsers[i]);
+    }
   });
 
   // test("create a user", async () => {

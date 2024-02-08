@@ -1,8 +1,6 @@
 import { assert } from "chai";
 import { db } from "../src/models/db.js";
-import { mozart, testPlaylists } from "./fixtures.js";
-
-// assert.equal(2, 2);
+import { testPlaylists, mozart } from "./fixtures.js";
 
 suite("Playlist Model tests", () => {
 
@@ -15,71 +13,43 @@ suite("Playlist Model tests", () => {
     }
   });
 
-  // test("create a user", async () => {
-  //   const newUser = await db.userStore.addUser(maggie);
-  //   assert.deepEqual(maggie, newUser)
-  // });
+  test("create a playlist", async () => {
+    const playlist = await db.playlistStore.addPlaylist(mozart);
+    assert.equal(mozart, playlist);
+    assert.isDefined(playlist._id);
+  });
 
-  // test("get a user - failures", async () => {
-  //   const noUserWithId = await db.userStore.getUserById("123");
-  //   console.log("Users id ",noUserWithId);
-  //   assert.isNull(noUserWithId);
-  //   const noUserWithEmail = await db.userStore.getUserByEmail("no@one.com");
-  //   console.log("Users email ",noUserWithEmail);
-  //   assert.isNull(noUserWithEmail);
-  // });
+  test("delete all playlists", async () => {
+    let returnedPlaylists = await db.playlistStore.getAllPlaylists();
+    assert.equal(returnedPlaylists.length, 3);
+    await db.playlistStore.deleteAllPlaylists();
+    returnedPlaylists = await db.playlistStore.getAllPlaylists();
+    assert.equal(returnedPlaylists.length, 0);
+  });
 
-  // test("get a user - bad params", async () => {
-  //   let nullUser = await db.userStore.getUserByEmail("");
-  //   console.log("Bad email param ", nullUser);
-  //   assert.isNull(nullUser);
-  //   nullUser = await db.userStore.getUserById("");
-  //   console.log("Bad userid 1 param ", nullUser);
-  //   assert.isNull(nullUser);
-  //   nullUser = await db.userStore.getUserById();
-  //   console.log("Bad userid 2 param ", nullUser);
-  //   assert.isNull(nullUser);
-  // });
+  test("get a playlist - success", async () => {
+    const playlist = await db.playlistStore.addPlaylist(mozart);
+    const returnedPlaylist = await db.playlistStore.getPlaylistById(playlist._id);
+    assert.equal(mozart, playlist);
+  });
 
-  // test("delete One User - fail", async () => {
-  //   await db.userStore.deleteUserById("bad-id");
-  //   const allUsers = await db.userStore.getAllUsers();
-  //   console.log("delete One User - Fail ", allUsers);
-  //   console.log("testuser count ", testUsers.length, "alluser count ", allUsers.length);
-  //   assert.equal(testUsers.length, allUsers.length);
-  // });
+  test("delete One Playist - success", async () => {
+    const id = testPlaylists[0]._id;
+    await db.playlistStore.deletePlaylistById(id);
+    const returnedPlaylists = await db.playlistStore.getAllPlaylists();
+    assert.equal(returnedPlaylists.length, testPlaylists.length - 1);
+    const deletedPlaylist = await db.playlistStore.getPlaylistById(id);
+    assert.isNull(deletedPlaylist);
+  });
 
-  // test("delete all users", async () => {
-  //   let returnedUsers = await db.userStore.getAllUsers();
-  //   console.log("Total Returned Users ",returnedUsers.length);
-  //   assert.equal(returnedUsers.length, 3);
-  //   await db.userStore.deleteAll();
-  //   returnedUsers = await db.userStore.getAllUsers();
-  //   assert.equal(returnedUsers.length, 0);
-  // });
+  test("get a playlist - bad params", async () => {
+    assert.isNull(await db.playlistStore.getPlaylistById(""));
+    assert.isNull(await db.playlistStore.getPlaylistById());
+  });
 
-  // test("get a user - success", async () => {
-  //   const user = await db.userStore.addUser(maggie);
-  //   console.log("Added User ",user);
-  //   const returnedUser1 = await db.userStore.getUserById(user._id);
-  //   console.log("Returned User ",returnedUser1);
-  //   assert.deepEqual(user, returnedUser1);
-  //   const returnedUser2 = await db.userStore.getUserByEmail(user.email);
-  //   assert.deepEqual(user, returnedUser2);
-  // });
-
-  // test("delete One User - success", async () => {
-  //   // for (let i = 0; i < testUsers.length; i += 1) {
-  //   //   // eslint-disable-next-line no-await-in-loop
-  //   //   testUsers[i] = await db.userStore.addUser(testUsers[i]);
-  //   // }
-  //   await db.userStore.deleteUserById(testUsers[0]._id);
-  //   const returnedUsers = await db.userStore.getAllUsers();
-  //   console.log("Returned Users ",returnedUsers);
-  //   assert.equal(returnedUsers.length, testUsers.length - 1);
-  //   const deletedUser = await db.userStore.getUserById(testUsers[0]._id);
-  //   console.log("Deleted User Returned ",deletedUser);
-  //   assert.isNull(deletedUser);
-  // });
-
+  test("delete One Playlist - fail", async () => {
+    await db.playlistStore.deletePlaylistById("bad-id");
+    const allPlaylists = await db.playlistStore.getAllPlaylists();
+    assert.equal(testPlaylists.length, allPlaylists.length);
+  });
 });
