@@ -1,53 +1,25 @@
 {
   "users": [
     {
-      "firstName": "Dermot",
-      "lastName": "Madsen",
-      "email": "dermiemadsen@gmail.com",
-      "password": "1234",
-      "_id": "bde0c419-683e-4572-a342-cdf48b229f40"
-    },
-    {
-      "firstName": "Maggie",
-      "lastName": "Simpson",
-      "email": "maggie@simpson.com",
-      "password": "secret",
-      "_id": "57fd1d80-8e26-40f3-abbe-d709df2ab870"
-    },
-    {
-      "firstName": "Maggie",
-      "lastName": "Simpson",
-      "email": "maggie@simpson.com",
-      "password": "secret",
-      "_id": "67da3305-b619-40c8-a982-ccb4c8e65d54"
-    },
-    {
-      "firstName": "Maggie",
-      "lastName": "Simpson",
-      "email": "maggie@simpson.com",
-      "password": "secret",
-      "_id": "2534b9d7-35bd-4289-b4fd-812031ed2574"
-    },
-    {
       "firstName": "Homer",
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "253f7bba-5568-4e6a-9d5c-4837011d0c80"
+      "_id": "cf72f766-df0d-4384-9eee-a858c4421e88"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "15e41879-59a3-4247-bd12-2003dd64cd44"
+      "_id": "45f3a180-9351-4101-897c-1bbb5a1db34a"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "66baa2d2-5c76-4c3e-bf3f-dc66cd1f3671"
+      "_id": "c08c2b83-43a7-4be5-b2cb-16ef462f97e9"
     }
   ],
   "playlists": [
@@ -60,6 +32,11 @@
       "userid": "bde0c419-683e-4572-a342-cdf48b229f40",
       "title": "Bella",
       "_id": "5e0c9574-5e68-4579-8349-48c4103ead77"
+    },
+    {
+      "userid": "fa5405ca-3697-4da9-b041-77988a255bf1",
+      "title": "Dermo",
+      "_id": "9719555e-5254-4664-bcd2-4e9e5f8320e9"
     }
   ],
   "tracks": [
@@ -76,6 +53,13 @@
       "duration": 12345,
       "_id": "2d2b7f7a-5848-4ee4-8b8b-145049febfc6",
       "playlistid": "5e0c9574-5e68-4579-8349-48c4103ead77"
+    },
+    {
+      "title": "Der",
+      "artist": "Me",
+      "duration": 123,
+      "_id": "656a1044-d58b-4d45-84a2-c9a59e61960a",
+      "playlistid": "9719555e-5254-4664-bcd2-4e9e5f8320e9"
     }
   ]
 }
