@@ -1,8 +1,8 @@
 import { EventEmitter } from "events";
 import { assert } from "chai";
-import { assertSubset } from "./test-utils.js";
-import { db } from "../src/models/db.js";
-import { testPlaylists, mozart } from "./fixtures.js";
+import { assertSubset } from "../test-utils.js";
+import { db } from "../../src/models/db.js";
+import { testPlaylists, mozart } from "../fixtures.js";
 
 
 EventEmitter.setMaxListeners(25);
