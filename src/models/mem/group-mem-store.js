@@ -32,4 +32,8 @@ export const groupMemStore = {
   async deleteAllGroups() {
     groups = [];
   },
+
+  async updateGroup(group, updatedGroup) {
+    group.title = updatedGroup.title;
+  },
 };

@@ -20,6 +20,8 @@ export const LighthouseSpec = {
     character: Joi.string().allow("").optional(),
     daymark: Joi.string().allow("").optional(),
     range: Joi.number().allow("").optional(),
+    latitude: Joi.allow("").optional(),
+    longitude: Joi.allow("").optional(),
   };
   
   export const GroupSpec = {

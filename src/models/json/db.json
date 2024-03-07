@@ -5,37 +5,34 @@
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "5e3d6097-91e7-4896-8405-10eb4fc83183"
+      "_id": "94089338-7f5d-4bb5-9429-e28bc31d4f51"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "b2307fdb-0e32-4be1-afe0-212d98a13036"
+      "_id": "3048d754-f1e9-4b91-9ffe-3296ff28c33d"
     },
     {
       "firstName": "Dermot",
       "lastName": "Madsen",
       "email": "dermiemadsen@gmail.com",
       "password": "1234",
-      "_id": "0dfc508e-0c0b-4f53-aed1-7d4c19b92712"
+      "_id": "e65c7422-cb71-45f2-b14a-67ae20efe0b5"
     }
   ],
   "groups": [
     {
       "title": "group1",
-      "_id": "0ecad4af-1629-4199-b2d7-752590841893"
+      "latitude": 0,
+      "longitude": 0,
+      "_id": "84919a78-fb75-4d7b-ba84-a9099d994c58"
     },
     {
-      "userid": "0dfc508e-0c0b-4f53-aed1-7d4c19b92712",
-      "title": "Dermie's",
-      "_id": "faaf0b23-ffe3-45f3-8485-8dd6f8aabff3"
-    },
-    {
-      "userid": "0dfc508e-0c0b-4f53-aed1-7d4c19b92712",
-      "title": "Dermie's 2",
-      "_id": "adfe9567-d438-4fff-8a3e-1d117fa8e802"
+      "userid": "e65c7422-cb71-45f2-b14a-67ae20efe0b5",
+      "title": "Susan",
+      "_id": "653b1c4a-65be-44e6-8857-e39943e3c4c1"
     }
   ],
   "lighthouses": [
@@ -46,8 +43,8 @@
       "character": "Fl(3) W3s",
       "daymark": "Painted Black and White",
       "range": 23,
-      "_id": "f9679610-69d8-4dbd-be67-da6d7bf347be",
-      "groupid": "0ecad4af-1629-4199-b2d7-752590841893"
+      "_id": "4e62a5e0-cec9-4f9d-85f7-25ea13fbbe97",
+      "groupid": "84919a78-fb75-4d7b-ba84-a9099d994c58"
     },
     {
       "title": "Skelligs Rock",
@@ -56,8 +53,8 @@
       "character": "Fl(3) 15s",
       "daymark": "Painted White",
       "range": 12,
-      "_id": "bf409be8-6680-4242-b2d0-9a8c0a7a36cb",
-      "groupid": "0ecad4af-1629-4199-b2d7-752590841893"
+      "_id": "208dbf4f-0273-4ec9-9bbe-244d56642e44",
+      "groupid": "84919a78-fb75-4d7b-ba84-a9099d994c58"
     },
     {
       "title": "Galley Head",
@@ -66,18 +63,128 @@
       "character": "Fl(5) W20s",
       "daymark": "Painted White",
       "range": 23,
-      "_id": "3596037d-dc3b-4e8d-819f-f6f233b03b11",
-      "groupid": "0ecad4af-1629-4199-b2d7-752590841893"
+      "_id": "e861f997-c68d-4e89-ae00-2a70aeb15d3c",
+      "groupid": "84919a78-fb75-4d7b-ba84-a9099d994c58"
     },
     {
       "title": "Fanad",
-      "towerHeight": 22,
-      "lightHeight": 39,
+      "towerHeight": 23,
+      "lightHeight": 55,
       "character": "Fl (5) WR20s",
       "daymark": "White",
-      "range": 26,
-      "_id": "3d604337-bc9d-468d-b3c0-bedee721f909",
-      "groupid": "faaf0b23-ffe3-45f3-8485-8dd6f8aabff3"
+      "range": 45,
+      "latitude": "3.55555",
+      "longitude": "-7.3445",
+      "_id": "349a3437-9b42-49e9-9f9b-2db0f0749769",
+      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+    },
+    {
+      "title": "Black Rock",
+      "towerHeight": 34,
+      "lightHeight": 45,
+      "character": "Fl (5) WR20s",
+      "daymark": "Black and White",
+      "range": 34,
+      "latitude": "1.1111",
+      "longitude": "-1.4444",
+      "_id": "cdd7d5c7-3204-43cc-babc-87c3c6e27d0b",
+      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+    },
+    {
+      "title": "F",
+      "towerHeight": 57,
+      "lightHeight": 67,
+      "character": "67",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "c0c369d7-2397-422f-8eb5-9f80520e0396",
+      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+    },
+    {
+      "title": "Pool Beg",
+      "towerHeight": "",
+      "lightHeight": "",
+      "character": "",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "0a2febec-dd93-498d-b831-f2f307d0936f",
+      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+    },
+    {
+      "title": "Fart",
+      "towerHeight": 23,
+      "lightHeight": 23,
+      "character": "",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "8a08a09f-b509-4848-820d-3ab05b4c51da",
+      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+    },
+    {
+      "title": "ggggg",
+      "towerHeight": "",
+      "lightHeight": "",
+      "character": "",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "f932ae21-1daa-4d00-85b6-53684cd8a5e0",
+      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+    },
+    {
+      "title": "Boo",
+      "towerHeight": "",
+      "lightHeight": "",
+      "character": "",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "2856e391-dfd2-4083-a0f3-ca9bd8e6f9bb",
+      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+    },
+    {
+      "title": "Marks 1",
+      "towerHeight": "",
+      "lightHeight": "",
+      "character": "",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "5b9380e8-02b1-4536-ad85-29b4f8a1dc97",
+      "groupid": "9472f988-16f2-4bc6-b131-1b828566751f"
+    },
+    {
+      "title": "Susans",
+      "towerHeight": "",
+      "lightHeight": "",
+      "character": "",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "ae497642-dc84-4e37-a81b-562721ed943f",
+      "groupid": "653b1c4a-65be-44e6-8857-e39943e3c4c1"
+    },
+    {
+      "title": "De",
+      "towerHeight": "",
+      "lightHeight": "",
+      "character": "",
+      "daymark": "",
+      "range": "",
+      "latitude": "",
+      "longitude": "",
+      "_id": "8eb045d2-f96e-4451-9883-c90ebd49828a",
+      "groupid": "653b1c4a-65be-44e6-8857-e39943e3c4c1"
     }
   ]
 }

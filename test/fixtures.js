@@ -29,7 +29,9 @@ export const testUsers = [
 ];
 
 export const group1 = {
-  title: "group1"
+  title: "group1",
+  latitude: 0.00000,
+  longitude: 0.00000,
 };
 
 export const lighthouse1 = {
@@ -44,13 +46,19 @@ export const lighthouse1 = {
 
 export const testGroups = [
   {
-    title: "Group1"
+    title: "Group2",
+    latitude: 2.00000,
+    longitude: 2.00000,
   },
   {
-    title: "Group2"
+    title: "Group3",
+    latitude: 3.00000,
+    longitude: 3.00000,
   },
   {
-    title: "Group3"
+    title: "Group4",
+    latitude: 4.00000,
+    longitude: 4.00000,
   }
 ];
 

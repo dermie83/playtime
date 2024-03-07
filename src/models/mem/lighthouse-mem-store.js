@@ -42,5 +42,7 @@ export const lighthouseMemStore = {
     lighthouse.character = updatedLighthouse.character;
     lighthouse.daymark = updatedLighthouse.daymark;
     lighthouse.range = updatedLighthouse.range;
+    lighthouse.latitiude = updatedLighthouse.latitiude;
+    lighthouse.longitiude = updatedLighthouse.longitiude;
   },
 };

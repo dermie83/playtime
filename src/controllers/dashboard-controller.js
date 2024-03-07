@@ -35,7 +35,6 @@ export const dashboardController = {
     },
   },
 
-
   deleteGroup: {
     handler: async function (request, h) {
       const group = await db.groupStore.getGroupById(request.params.id);

@@ -30,6 +30,8 @@ export const groupController = {
         character: request.payload.character,
         daymark: request.payload.daymark,
         range: request.payload.range,
+        latitude: request.payload.latitude,
+        longitude: request.payload.longitude,
       };
       await db.lighthouseStore.addLighthouse(group._id, newLighthouse);
       return h.redirect(`/group/${group._id}`);
