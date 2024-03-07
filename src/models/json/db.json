@@ -13,12 +13,29 @@
       "email": "bart@simpson.com",
       "password": "secret",
       "_id": "b2307fdb-0e32-4be1-afe0-212d98a13036"
+    },
+    {
+      "firstName": "Dermot",
+      "lastName": "Madsen",
+      "email": "dermiemadsen@gmail.com",
+      "password": "1234",
+      "_id": "0dfc508e-0c0b-4f53-aed1-7d4c19b92712"
     }
   ],
   "groups": [
     {
       "title": "group1",
       "_id": "0ecad4af-1629-4199-b2d7-752590841893"
+    },
+    {
+      "userid": "0dfc508e-0c0b-4f53-aed1-7d4c19b92712",
+      "title": "Dermie's",
+      "_id": "faaf0b23-ffe3-45f3-8485-8dd6f8aabff3"
+    },
+    {
+      "userid": "0dfc508e-0c0b-4f53-aed1-7d4c19b92712",
+      "title": "Dermie's 2",
+      "_id": "adfe9567-d438-4fff-8a3e-1d117fa8e802"
     }
   ],
   "lighthouses": [
@@ -51,6 +68,16 @@
       "range": 23,
       "_id": "3596037d-dc3b-4e8d-819f-f6f233b03b11",
       "groupid": "0ecad4af-1629-4199-b2d7-752590841893"
+    },
+    {
+      "title": "Fanad",
+      "towerHeight": 22,
+      "lightHeight": 39,
+      "character": "Fl (5) WR20s",
+      "daymark": "White",
+      "range": 26,
+      "_id": "3d604337-bc9d-468d-b3c0-bedee721f909",
+      "groupid": "faaf0b23-ffe3-45f3-8485-8dd6f8aabff3"
     }
   ]
 }
