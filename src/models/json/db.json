@@ -5,43 +5,52 @@
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "ba0370f9-70c8-4daa-b35b-9b1d73c12586"
+      "_id": "5e3d6097-91e7-4896-8405-10eb4fc83183"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "984a9f67-b364-47fa-96e9-4b27791f5d8e"
+      "_id": "b2307fdb-0e32-4be1-afe0-212d98a13036"
     }
   ],
-  "playlists": [
+  "groups": [
     {
-      "title": "Mozart Favourites",
-      "_id": "3ea413bd-1344-4da4-aff3-b3beb627607c"
+      "title": "group1",
+      "_id": "0ecad4af-1629-4199-b2d7-752590841893"
     }
   ],
-  "tracks": [
+  "lighthouses": [
     {
-      "title": "Piano Sonata No. 3",
-      "artist": "Beethoven",
-      "duration": 5,
-      "_id": "3bbfb983-d53f-4031-8364-7698afd1a741",
-      "playlistid": "3ea413bd-1344-4da4-aff3-b3beb627607c"
+      "title": "Hook Head",
+      "towerHeight": 35,
+      "lightHeight": 46,
+      "character": "Fl(3) W3s",
+      "daymark": "Painted Black and White",
+      "range": 23,
+      "_id": "f9679610-69d8-4dbd-be67-da6d7bf347be",
+      "groupid": "0ecad4af-1629-4199-b2d7-752590841893"
     },
     {
-      "title": "Piano Sonata No. 7",
-      "artist": "Beethoven",
-      "duration": 6,
-      "_id": "9df3903d-83ab-496c-b868-041391dbcabc",
-      "playlistid": "3ea413bd-1344-4da4-aff3-b3beb627607c"
+      "title": "Skelligs Rock",
+      "towerHeight": 12,
+      "lightHeight": 53.3,
+      "character": "Fl(3) 15s",
+      "daymark": "Painted White",
+      "range": 12,
+      "_id": "bf409be8-6680-4242-b2d0-9a8c0a7a36cb",
+      "groupid": "0ecad4af-1629-4199-b2d7-752590841893"
     },
     {
-      "title": "Piano Sonata No. 10",
-      "artist": "Beethoven",
-      "duration": 4,
-      "_id": "3a9f6e0c-7b1c-42a7-bb11-b91adfafd530",
-      "playlistid": "3ea413bd-1344-4da4-aff3-b3beb627607c"
+      "title": "Galley Head",
+      "towerHeight": 21,
+      "lightHeight": 53,
+      "character": "Fl(5) W20s",
+      "daymark": "Painted White",
+      "range": 23,
+      "_id": "3596037d-dc3b-4e8d-819f-f6f233b03b11",
+      "groupid": "0ecad4af-1629-4199-b2d7-752590841893"
     }
   ]
 }

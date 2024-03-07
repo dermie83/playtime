@@ -1,45 +1,45 @@
 import { db } from "../models/db.js";
-import { PlaylistSpec} from "../models/joi-schemas.js";
+import { GroupSpec} from "../models/joi-schemas.js";
 
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
-      const playlists = await db.playlistStore.getUserPlaylists(loggedInUser._id);
+      const groups = await db.groupStore.getUserGroups(loggedInUser._id);
       // const playlists = await db.playlistStore.getAllPlaylists();
       const viewData = {
-        title: "Playtime Dashboard",
+        title: "My Lighthouse Dashboard",
         user: loggedInUser,
-        playlists: playlists,
+        groups: groups,
       };
       return h.view("dashboard-view", viewData);
     },
   },
 
-  addPlaylist: {
+  addGroup: {
     validate: {
-      payload: PlaylistSpec,
+      payload: GroupSpec,
       options: { abortEarly: false },
       failAction: function (request, h, error) {
-        return h.view("dashboard-view", { title: "Add Playlist error", errors: error.details }).takeover().code(400);
+        return h.view("dashboard-view", { title: "Add Group error", errors: error.details }).takeover().code(400);
       },
     },
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
-      const newPlayList = {
+      const newGroup = {
         userid: loggedInUser._id,
         title: request.payload.title,
       };
-      await db.playlistStore.addPlaylist(newPlayList);
+      await db.groupStore.addGroup(newGroup);
       return h.redirect("/dashboard");
     },
   },
 
 
-  deletePlaylist: {
+  deleteGroup: {
     handler: async function (request, h) {
-      const playlist = await db.playlistStore.getPlaylistById(request.params.id);
-      await db.playlistStore.deletePlaylistById(playlist._id);
+      const group = await db.groupStore.getGroupById(request.params.id);
+      await db.groupStore.deleteGroupById(group._id);
       return h.redirect("/dashboard");
     },
   },

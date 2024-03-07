@@ -1,0 +1,41 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tower Height</th>
+      <th>Light Height</th>
+      <th>Character</th>
+      <th>Daymark</th>
+      <th>Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each group.lighthouses}}
+    <tr>
+      <td>
+        {{title}}
+      </td>
+      <td>
+        {{towerHeight}}
+      </td>
+      <td>
+        {{lightHeight}}
+      </td>
+      <td>
+        {{character}}
+      </td>
+      <td>
+        {{daymark}}
+      </td>
+      <td>
+        {{range}}
+      </td>
+      <td>
+        <a href="/group/{{../group._id}}/deletegroup/{{_id}}" class="ui icon button">
+          <i class="fas fa-trash"></i>
+        </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

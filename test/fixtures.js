@@ -28,46 +28,55 @@ export const testUsers = [
     },
 ];
 
-export const mozart = {
-  title: "Mozart Favourites"
+export const group1 = {
+  title: "group1"
 };
 
-export const concerto = {
-  "title": "Violin Concerto No. 3",
-  "artist": "Mozart",
-  "duration": 15
+export const lighthouse1 = {
+  "title": "Wicklow Head",
+  "towerHeight": 14,
+  "lightHeight": 37,
+  "character": "Fl(3) W15s",
+  "daymark": "Painted White",
+  "range": 23,
 };
 
-export const beethoven = {
-  title: "Mozart Favourites"
-};
 
-export const testPlaylists = [
+export const testGroups = [
   {
-    title: "Beethoven Sonatas"
+    title: "Group1"
   },
   {
-    title: "Beethoven Concertos"
+    title: "Group2"
   },
   {
-    title: "Beethoven Symphonies"
+    title: "Group3"
   }
 ];
 
-export const testTracks = [
+export const testLighthouses = [
   {
-    "title": "Piano Sonata No. 3",
-    "artist": "Beethoven",
-    "duration": 5
+    "title": "Hook Head",
+    "towerHeight": 35,
+    "lightHeight": 46,
+    "character": "Fl(3) W3s",
+    "daymark": "Painted Black and White",
+    "range": 23,
   },
   {
-    "title": "Piano Sonata No. 7",
-    "artist": "Beethoven",
-    "duration": 6
+    "title": "Skelligs Rock",
+    "towerHeight": 12,
+    "lightHeight": 53.3,
+    "character": "Fl(3) 15s",
+    "daymark": "Painted White",
+    "range": 12,
   },
   {
-    "title": "Piano Sonata No. 10",
-    "artist": "Beethoven",
-    "duration": 4
+    "title": "Galley Head",
+    "towerHeight": 21,
+    "lightHeight": 53,
+    "character": "Fl(5) W20s",
+    "daymark": "Painted White",
+    "range": 23,
   }
 ];
