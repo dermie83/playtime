@@ -59,7 +59,7 @@ export const groupController = {
       },
     },
     handler: async function (request, h) {
-      const group = await db.group.getGroupById(request.params.id);
+      const group = await db.groupStore.getGroupById(request.params.id);
       console.log("group", group)
       const updateLighthouse = {
         title: request.payload.title,
