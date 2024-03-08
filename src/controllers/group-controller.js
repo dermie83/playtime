@@ -40,11 +40,11 @@ export const groupController = {
 
   editLighthouseView: {
     handler: async function (request, h) {
-      const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.id);
-      console.log("lighthouseID", lighthouse)
+      const group = await db.groupStore.getGroupById(request.params.id);
+      console.log("lighthouseID", group)
       const viewData = {
         title: "Lighthouses",
-        lighthouse: lighthouse,
+        group: group,
       };
       return h.view("edit-lighthouse-view", viewData);
     },
@@ -59,9 +59,9 @@ export const groupController = {
       },
     },
     handler: async function (request, h) {
-      const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.id);
-      console.log("lighthouseID", lighthouse)
-      const newLighthouse = {
+      const group = await db.group.getGroupById(request.params.id);
+      console.log("group", group)
+      const updateLighthouse = {
         title: request.payload.title,
         towerHeight: request.payload.towerHeight,
         lightHeight: request.payload.lightHeight,
@@ -71,7 +71,7 @@ export const groupController = {
         latitude: request.payload.latitude,
         longitude: request.payload.longitude,
       };
-      await db.lighthouseStore.updateLighthouse(lighthouse._id, newLighthouse);
+      await db.lighthouseStore.updateLighthouse(group._id, updateLighthouse);
       return h.redirect(`/group/${group._id}`);
     },
   },
