@@ -5,21 +5,21 @@
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "94089338-7f5d-4bb5-9429-e28bc31d4f51"
+      "_id": "63a2e4b0-0059-4b0e-b828-6cb99afefb3e"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "3048d754-f1e9-4b91-9ffe-3296ff28c33d"
+      "_id": "a14cfa0e-9f65-49af-99c7-ae774afed7c0"
     },
     {
       "firstName": "Dermot",
       "lastName": "Madsen",
       "email": "dermiemadsen@gmail.com",
       "password": "1234",
-      "_id": "e65c7422-cb71-45f2-b14a-67ae20efe0b5"
+      "_id": "3dbdc448-c90f-479c-9948-30b1bcb0f703"
     }
   ],
   "groups": [
@@ -27,12 +27,17 @@
       "title": "group1",
       "latitude": 0,
       "longitude": 0,
-      "_id": "84919a78-fb75-4d7b-ba84-a9099d994c58"
+      "_id": "4bd86a2d-705e-4f28-a19c-c93f7fd0ddc5"
     },
     {
-      "userid": "e65c7422-cb71-45f2-b14a-67ae20efe0b5",
+      "userid": "3dbdc448-c90f-479c-9948-30b1bcb0f703",
+      "title": "DErm",
+      "_id": "a30b018f-04e0-4d5d-8618-cfe2d2baa25b"
+    },
+    {
+      "userid": "3dbdc448-c90f-479c-9948-30b1bcb0f703",
       "title": "Susan",
-      "_id": "653b1c4a-65be-44e6-8857-e39943e3c4c1"
+      "_id": "abcc99a1-9d84-4826-80f5-4ff99f796366"
     }
   ],
   "lighthouses": [
@@ -43,8 +48,8 @@
       "character": "Fl(3) W3s",
       "daymark": "Painted Black and White",
       "range": 23,
-      "_id": "4e62a5e0-cec9-4f9d-85f7-25ea13fbbe97",
-      "groupid": "84919a78-fb75-4d7b-ba84-a9099d994c58"
+      "_id": "898a1323-f1d8-47c9-a75c-37a2362d6614",
+      "groupid": "4bd86a2d-705e-4f28-a19c-c93f7fd0ddc5"
     },
     {
       "title": "Skelligs Rock",
@@ -53,8 +58,8 @@
       "character": "Fl(3) 15s",
       "daymark": "Painted White",
       "range": 12,
-      "_id": "208dbf4f-0273-4ec9-9bbe-244d56642e44",
-      "groupid": "84919a78-fb75-4d7b-ba84-a9099d994c58"
+      "_id": "a475f70d-098e-4a41-805f-d96e46830d05",
+      "groupid": "4bd86a2d-705e-4f28-a19c-c93f7fd0ddc5"
     },
     {
       "title": "Galley Head",
@@ -63,47 +68,11 @@
       "character": "Fl(5) W20s",
       "daymark": "Painted White",
       "range": 23,
-      "_id": "e861f997-c68d-4e89-ae00-2a70aeb15d3c",
-      "groupid": "84919a78-fb75-4d7b-ba84-a9099d994c58"
+      "_id": "c02a49b1-ff67-4602-b9dd-126dedea660f",
+      "groupid": "4bd86a2d-705e-4f28-a19c-c93f7fd0ddc5"
     },
     {
-      "title": "Fanad",
-      "towerHeight": 23,
-      "lightHeight": 55,
-      "character": "Fl (5) WR20s",
-      "daymark": "White",
-      "range": 45,
-      "latitude": "3.55555",
-      "longitude": "-7.3445",
-      "_id": "349a3437-9b42-49e9-9f9b-2db0f0749769",
-      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
-    },
-    {
-      "title": "Black Rock",
-      "towerHeight": 34,
-      "lightHeight": 45,
-      "character": "Fl (5) WR20s",
-      "daymark": "Black and White",
-      "range": 34,
-      "latitude": "1.1111",
-      "longitude": "-1.4444",
-      "_id": "cdd7d5c7-3204-43cc-babc-87c3c6e27d0b",
-      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
-    },
-    {
-      "title": "F",
-      "towerHeight": 57,
-      "lightHeight": 67,
-      "character": "67",
-      "daymark": "",
-      "range": "",
-      "latitude": "",
-      "longitude": "",
-      "_id": "c0c369d7-2397-422f-8eb5-9f80520e0396",
-      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
-    },
-    {
-      "title": "Pool Beg",
+      "title": "f",
       "towerHeight": "",
       "lightHeight": "",
       "character": "",
@@ -111,23 +80,11 @@
       "range": "",
       "latitude": "",
       "longitude": "",
-      "_id": "0a2febec-dd93-498d-b831-f2f307d0936f",
-      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
+      "_id": "b722ec07-46bf-4327-bf56-f734fb2f07be",
+      "groupid": "a30b018f-04e0-4d5d-8618-cfe2d2baa25b"
     },
     {
-      "title": "Fart",
-      "towerHeight": 23,
-      "lightHeight": 23,
-      "character": "",
-      "daymark": "",
-      "range": "",
-      "latitude": "",
-      "longitude": "",
-      "_id": "8a08a09f-b509-4848-820d-3ab05b4c51da",
-      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
-    },
-    {
-      "title": "ggggg",
+      "title": "Shite",
       "towerHeight": "",
       "lightHeight": "",
       "character": "",
@@ -135,32 +92,8 @@
       "range": "",
       "latitude": "",
       "longitude": "",
-      "_id": "f932ae21-1daa-4d00-85b6-53684cd8a5e0",
-      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
-    },
-    {
-      "title": "Boo",
-      "towerHeight": "",
-      "lightHeight": "",
-      "character": "",
-      "daymark": "",
-      "range": "",
-      "latitude": "",
-      "longitude": "",
-      "_id": "2856e391-dfd2-4083-a0f3-ca9bd8e6f9bb",
-      "groupid": "20504d71-9169-4961-9c53-06a472cbcd82"
-    },
-    {
-      "title": "Marks 1",
-      "towerHeight": "",
-      "lightHeight": "",
-      "character": "",
-      "daymark": "",
-      "range": "",
-      "latitude": "",
-      "longitude": "",
-      "_id": "5b9380e8-02b1-4536-ad85-29b4f8a1dc97",
-      "groupid": "9472f988-16f2-4bc6-b131-1b828566751f"
+      "_id": "91fd9bd4-0b70-4880-9561-41b87bc87c42",
+      "groupid": "abcc99a1-9d84-4826-80f5-4ff99f796366"
     }
   ]
 }
