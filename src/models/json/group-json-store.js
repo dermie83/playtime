@@ -20,7 +20,7 @@ export const groupJsonStore = {
     await db.read();
     let list = db.data.groups.find((group) => group._id === id);
     if (list){
-      list.groups = await lighthouseJsonStore.getLighthousesByGroupId(list._id);
+      list.lighthouses = await lighthouseJsonStore.getLighthousesByGroupId(list._id);
     } else {
       list = null;
     }

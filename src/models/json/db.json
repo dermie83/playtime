@@ -161,30 +161,6 @@
       "longitude": "",
       "_id": "5b9380e8-02b1-4536-ad85-29b4f8a1dc97",
       "groupid": "9472f988-16f2-4bc6-b131-1b828566751f"
-    },
-    {
-      "title": "Susans",
-      "towerHeight": "",
-      "lightHeight": "",
-      "character": "",
-      "daymark": "",
-      "range": "",
-      "latitude": "",
-      "longitude": "",
-      "_id": "ae497642-dc84-4e37-a81b-562721ed943f",
-      "groupid": "653b1c4a-65be-44e6-8857-e39943e3c4c1"
-    },
-    {
-      "title": "De",
-      "towerHeight": "",
-      "lightHeight": "",
-      "character": "",
-      "daymark": "",
-      "range": "",
-      "latitude": "",
-      "longitude": "",
-      "_id": "8eb045d2-f96e-4451-9883-c90ebd49828a",
-      "groupid": "653b1c4a-65be-44e6-8857-e39943e3c4c1"
     }
   ]
 }
