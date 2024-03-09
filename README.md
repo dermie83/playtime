@@ -1,3 +1,3 @@
 README
 
-This an assignment
+This is an assignment
