@@ -1,3 +1,4 @@
+import axios from "axios";
 import { db } from "../models/db.js";
 import { LighthouseSpec} from "../models/joi-schemas.js";
 
@@ -33,46 +34,30 @@ export const groupController = {
         latitude: request.payload.latitude,
         longitude: request.payload.longitude,
       };
+
+      const report = {};
+      
+      const api = process.env.open_api;
+      // const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey.getOpenWeatherapiKey()}`
+      const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${newLighthouse.latitude}&lon=${newLighthouse.longitude}&units=metric&appid=${api}`
+      const result = await axios.get(requestUrl);
+      // console.log("API", result);
+      if (result.status === 200) {
+      //     report.tempTrend = [];
+      //     report.trendLabels = [];
+      //     const trends = result.data.daily;
+      //     for (let i=0; i<trends.length; i += 1) {
+      //         report.tempTrend.push(trends[i].temp.day);
+      //         const date = new Date(trends[i].dt * 1000);
+      //         report.trendLabels.push(`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}` );
+       }; const viewData = {
+            title: "Lighthouses",
+            reading: result.data.current.temp,
+            timezone: result.data.timezone
+          };
+          console.log("view api data", viewData)
+          //  return h.view("group-view", viewData);
       await db.lighthouseStore.addLighthouse(group._id, newLighthouse);
-      return h.redirect(`/group/${group._id}`);
-    },
-  },
-
-  editLighthouseView: {
-    handler: async function (request, h) {
-      const group = await db.groupStore.getGroupById(request.params.id);
-      const lighthouse = await db.lighthouseStore.getLighthouseById(group._id);
-      console.log("lighthouseID", lighthouse)
-      const viewData = {
-        title: "Lighthouses",
-        lighthouse: lighthouse,
-      };
-      return h.view("edit-lighthouse-view", viewData);
-    },
-  },
-
-  updateLighthouse: {
-    validate: {
-      payload: LighthouseSpec,
-      options: { abortEarly: false },
-      failAction: function (request, h, error) {
-        return h.view("edit-lighthouse-view", { title: "Update Lighthouse error", errors: error.details }).takeover().code(400);
-      },
-    },
-    handler: async function (request, h) {
-      const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.id);
-      console.log("lighthouseID", lighthouse)
-      const newLighthouse = {
-        title: request.payload.title,
-        towerHeight: request.payload.towerHeight,
-        lightHeight: request.payload.lightHeight,
-        character: request.payload.character,
-        daymark: request.payload.daymark,
-        range: request.payload.range,
-        latitude: request.payload.latitude,
-        longitude: request.payload.longitude,
-      };
-      await db.lighthouseStore.updateLighthouse(lighthouse._id, newLighthouse);
       return h.redirect(`/group/${group._id}`);
     },
   },

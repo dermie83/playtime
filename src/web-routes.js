@@ -2,6 +2,8 @@ import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { groupController } from "./controllers/group-controller.js";
+import { lighthouseController } from "./controllers/lighthouse-controller.js";
+
 
 
 export const webRoutes = [
@@ -24,7 +26,7 @@ export const webRoutes = [
   { method: "GET", path: "/group/{id}", config: groupController.index },
   { method: "POST", path: "/group/{id}/addlighthouse", config: groupController.addLighthouse },
   { method: "GET", path: "/group/{id}/deletegroup/{lighthouseid}", config: groupController.deleteLighthouse },
-  { method: "GET", path: "/group/{id}/editlighthouse/{lighthouseid}", config: groupController.editLighthouseView },
-  { method: "POST", path: "/group/{id}/updatelighthouse/{lighthouseid}", config: groupController.updateLighthouse}
+  { method: "GET", path: "/group/{id}/editlighthouse/{lighthouseid}", config: lighthouseController.index },
+  // { method: "POST", path: "/group/{id}/updatelighthouse/{lighthouseid}", config: groupController.updateLighthouse}
 
 ];
