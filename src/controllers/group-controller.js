@@ -41,7 +41,7 @@ export const groupController = {
   editLighthouseView: {
     handler: async function (request, h) {
       const group = await db.groupStore.getGroupById(request.params.id);
-      console.log("lighthouseID", group)
+      console.log("lighthouseID", group._id)
       const viewData = {
         title: "Lighthouses",
         group: group,
@@ -71,6 +71,7 @@ export const groupController = {
         latitude: request.payload.latitude,
         longitude: request.payload.longitude,
       };
+      console.log("test1",updateLighthouse.title)
       await db.lighthouseStore.updateLighthouse(group._id, updateLighthouse);
       return h.redirect(`/group/${group._id}`);
     },
