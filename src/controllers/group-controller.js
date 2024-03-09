@@ -41,7 +41,7 @@ export const groupController = {
   editLighthouseView: {
     handler: async function (request, h) {
       const group = await db.groupStore.getGroupById(request.params.id);
-      const lighthouse = await db.lighthouseStore.getLighthouseByGroupId(group._id);
+      const lighthouse = await db.lighthouseStore.getLighthouseById(group._id);
       console.log("lighthouseID", lighthouse)
       const viewData = {
         title: "Lighthouses",
