@@ -30,8 +30,6 @@ export const testUsers = [
 
 export const group1 = {
   title: "group1",
-  latitude: 0.00000,
-  longitude: 0.00000,
 };
 
 export const lighthouse1 = {
@@ -41,24 +39,23 @@ export const lighthouse1 = {
   "character": "Fl(3) W15s",
   "daymark": "Painted White",
   "range": 23,
+  "latitude": 0.00000,
+  "longitude": 0.00000,
 };
 
 
 export const testGroups = [
   {
     title: "Group2",
-    latitude: 2.00000,
-    longitude: 2.00000,
+    
   },
   {
     title: "Group3",
-    latitude: 3.00000,
-    longitude: 3.00000,
+    
   },
   {
     title: "Group4",
-    latitude: 4.00000,
-    longitude: 4.00000,
+    
   }
 ];
 
@@ -70,6 +67,8 @@ export const testLighthouses = [
     "character": "Fl(3) W3s",
     "daymark": "Painted Black and White",
     "range": 23,
+    "latitude": 1.00000,
+    "longitude": -1.00000,
   },
   {
     "title": "Skelligs Rock",
@@ -78,6 +77,8 @@ export const testLighthouses = [
     "character": "Fl(3) 15s",
     "daymark": "Painted White",
     "range": 12,
+    "latitude": 2.00000,
+    "longitude": -2.00000,
   },
   {
     "title": "Galley Head",
@@ -86,5 +87,7 @@ export const testLighthouses = [
     "character": "Fl(5) W20s",
     "daymark": "Painted White",
     "range": 23,
+    "latitude": 3.00000,
+    "longitude": -3.00000,
   }
 ];

@@ -7,8 +7,8 @@ import { groupController } from "./controllers/group-controller.js";
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
   { method: "GET", path: "/signup", config: accountsController.showSignup },
-  { method: "GET", path: "/profile", config: accountsController.showProfile},
-  { method: "POST", path: "/profile/update/{id}", config: accountsController.updateProfile},
+  // { method: "GET", path: "/profile", config: accountsController.showProfile},
+  // { method: "POST", path: "/profile/update/{id}", config: accountsController.updateProfile},
   
   { method: "GET", path: "/login", config: accountsController.showLogin },
   { method: "GET", path: "/logout", config: accountsController.logout },

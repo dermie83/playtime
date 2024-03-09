@@ -4,10 +4,10 @@ import { lighthouseMemStore } from "./mem/lighthouse-mem-store.js";
 import { userJsonStore } from "./json/user-json-store.js";
 import { groupJsonStore } from "./json/group-json-store.js";
 import { lighthouseJsonStore } from "./json/lighthouse-json-store.js";
-// import { connectMongo } from "./mongo/connect.js";
-// import { userMongoStore } from "./mongo/user-mongo-store.js";
-// import { playlistMongoStore } from "./mongo/playlist-mongo-store.js";
-// import { trackMongoStore } from "./mongo/track-mongo-store.js";
+import { connectMongo } from "./mongo/connect.js";
+import { userMongoStore } from "./mongo/user-mongo-store.js";
+import { groupMongoStore } from "./mongo/group-mongo-store.js";
+import { lighthouseMongoStore } from "./mongo/lighthouse-mongo-store.js";
 
 
 
