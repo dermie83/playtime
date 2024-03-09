@@ -6,7 +6,6 @@ export const dashboardController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const groups = await db.groupStore.getUserGroups(loggedInUser._id);
-      // const playlists = await db.playlistStore.getAllPlaylists();
       const viewData = {
         title: "My Lighthouse Dashboard",
         user: loggedInUser,

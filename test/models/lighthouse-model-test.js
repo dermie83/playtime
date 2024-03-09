@@ -4,22 +4,22 @@ import { testGroups, testLighthouses, lighthouse1, group1 } from "../fixtures.js
 import { assertSubset } from "../test-utils.js";
 
 suite("Lighthouse Model tests", () => {
-  let groupList = null;
+  let newGroup = null;
 
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await db.groupStore.deleteAllGroups();
     await db.lighthouseStore.deleteAllLighthouses();
-    groupList = await db.groupStore.addGroup(group1);
+    newGroup = await db.groupStore.addGroup(group1);
     for (let i = 0; i < testLighthouses.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      testLighthouses[i] = await db.lighthouseStore.addLighthouse(groupList._id, testLighthouses[i]);
+      testLighthouses[i] = await db.lighthouseStore.addLighthouse(newGroup._id, testLighthouses[i]);
     }
   });
 
   test("create single lighthouse", async () => {
-    const group1List = await db.groupStore.addGroup(group1);
-    const lighthouse = await db.lighthouseStore.addLighthouse(group1List._id, lighthouse1);
+    const newGroup1 = await db.groupStore.addGroup(group1);
+    const lighthouse = await db.lighthouseStore.addLighthouse(newGroup1._id, lighthouse1);
     assert.isNotNull(lighthouse._id);
     assertSubset(lighthouse1, lighthouse);
   });
@@ -38,8 +38,8 @@ suite("Lighthouse Model tests", () => {
   });
 
   test("get a lighthouse - success", async () => {
-    const group = await db.groupStore.addGroup(group1);
-    const lighthouse = await db.lighthouseStore.addLighthouse(group._id, lighthouse1);
+    const newGroup2 = await db.groupStore.addGroup(group1);
+    const lighthouse = await db.lighthouseStore.addLighthouse(newGroup2._id, lighthouse1);
     const newLighthouse = await db.lighthouseStore.getLighthouseById(lighthouse._id);
     assertSubset(lighthouse1, newLighthouse);
   });

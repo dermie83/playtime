@@ -2,13 +2,13 @@ import Boom from "@hapi/boom";
 // import { PlaylistSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
-export const playlistApi = {
+export const groupApi = {
   find: {
     auth: false,
     handler: async function (request, h) {
       try {
-        const playlists = await db.playlistStore.getAllPlaylists();
-        return playlists;
+        const groups = await db.groupStore.getAllGroups();
+        return groups;
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }
@@ -19,13 +19,13 @@ export const playlistApi = {
     auth: false,
     async handler(request) {
       try {
-        const playlist = await db.playlistStore.getPlaylistById(request.params.id);
-        if (!playlist) {
-          return Boom.notFound("No Playlist with this id");
+        const group = await db.groupStore.getGroupById(request.params.id);
+        if (!group) {
+          return Boom.notFound("No Group with this id");
         }
-        return playlist;
+        return group;
       } catch (err) {
-        return Boom.serverUnavailable("No Playlist with this id");
+        return Boom.serverUnavailable("No Group with this id");
       }
     },
   },
@@ -34,12 +34,12 @@ export const playlistApi = {
     auth: false,
     handler: async function (request, h) {
       try {
-        const playlist = request.payload;
-        const newPlaylist = await db.playlistStore.addPlaylist(playlist);
-        if (newPlaylist) {
-          return h.response(newPlaylist).code(201);
+        const group = request.payload;
+        const newGroup = await db.groupStore.addGroup(group);
+        if (newGroup) {
+          return h.response(newGroup).code(201);
         }
-        return Boom.badImplementation("error creating playlist");
+        return Boom.badImplementation("error creating group");
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }
@@ -50,14 +50,14 @@ export const playlistApi = {
     auth: false,
     handler: async function (request, h) {
       try {
-        const playlist = await db.playlistStore.getPlaylistById(request.params.id);
-        if (!playlist) {
-          return Boom.notFound("No Playlist with this id");
+        const group = await db.groupStore.getGroupById(request.params.id);
+        if (!group) {
+          return Boom.notFound("No Group with this id");
         }
-        await db.playlistStore.deletePlaylistById(playlist._id);
+        await db.groupStore.deleteGroupById(group._id);
         return h.response().code(204);
       } catch (err) {
-        return Boom.serverUnavailable("No Playlist with this id");
+        return Boom.serverUnavailable("No Group with this id");
       }
     },
   },
@@ -66,7 +66,7 @@ export const playlistApi = {
     auth: false,
     handler: async function (request, h) {
       try {
-        await db.playlistStore.deleteAllPlaylists();
+        await db.groupStore.deleteAllGroups();
         return h.response().code(204);
       } catch (err) {
         return Boom.serverUnavailable("Database Error");

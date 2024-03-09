@@ -1,14 +1,16 @@
 {
-  "name": "playtime",
-  "version": "0.1.0",
-  "description": "Playtime: a Hapi/node application for managing Playlists",
+  "name": "lighthouse",
+  "version": "0.2.0",
+  "description": "Irish Lighthouses: a Hapi/node application for managing Groups of lighthouses",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "./node_modules/.bin/nodemon src/server.js --ignore 'src/models/json/*.json'",
+    "dev": "nodemon src/server.js --ignore 'src/models/json/*.json'",
     "lint": "eslint . --ext .js",
-    "test": "mocha --ui tdd test/**/*.js -exit"
+    "test": "mocha --ui tdd test/**/*.js -exit",
+    "testmodels": "mocha --ui tdd test/models/**/*.js -exit",
+    "testapi": "mocha --ui tdd test/api/**/*.js"
   },
   "author": "WIT",
   "license": "ISC",
@@ -20,6 +22,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "mocha": "^10.2.0",
+    "nodemon": "^3.1.0",
     "prettier": "^3.2.2"
   },
   "dependencies": {
