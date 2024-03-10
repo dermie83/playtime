@@ -1,35 +1,40 @@
-# Playtime Changelog
+# Lighthouse Changelog
 
-## version 0.3.0
-support delete playlist + tracks
-introduce .env for secrets
-include Joi schema validation for signup form
-incorporate JSON data stores
+## version 0.3.1
+
+- introduce Open Weather API data
+- introduce image upload function
+- advance admin account controller + views & partials
+- edit functionality for user, group and lighthouse data
 
 ## version 0.2.0
-
-- about controller + view added
-- introduce track model
-- playlist controller + view & partials added
-- support adding trackApi to playlists
+- use Postman to test API urls
+- edd tdd with chai and mocha
+- connect to studio 3T
+- incorporate mongo db data stores
+- support delete group + users
+- introduce .env for secrets
+- include Joi schema validation for signup form
+- incorporate JSON data stores
 - introduce sessions
-- associate playlists with userApi
+- associate group and lighthouse with userApi
 
 ## version 0.1.0
 
-- added .gitgnore from <https://github.com/github/gitignore>
+- add .gitgnore from <https://github.com/github/gitignore>
 - add CHANGELOG file
 
 - installed hapi
 - first simple server
 - start command
 
-- install eslint + prettier
+- installed eslint + prettier
 - add lint command script
 - add eslint + prettier config
 -
 - vision and inert hapi components
-- simple in-memory playlist and user models
+- created simple in-memory group and lighthouse and user models
 - account controller + views & partials
-- playlist controller + views & partials
-- about controller + views
+- intro Lighthouse controller + views & partials
+- intro to Group controller + views & partials
+- added about controller + views
