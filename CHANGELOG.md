@@ -9,7 +9,7 @@
 
 ## version 0.2.0
 - use Postman to test API urls
-- edd tdd with chai and mocha
+- conduct tdd with chai and mocha add ons
 - connect to studio 3T
 - incorporate mongo db data stores
 - support delete group + users
