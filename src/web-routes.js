@@ -1,4 +1,5 @@
 import { accountsController } from "./controllers/accounts-controller.js";
+import { adminController } from "./controllers/admin-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { groupController } from "./controllers/group-controller.js";
@@ -9,8 +10,10 @@ import { lighthouseController } from "./controllers/lighthouse-controller.js";
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
   { method: "GET", path: "/signup", config: accountsController.showSignup },
-  // { method: "GET", path: "/profile", config: accountsController.showProfile},
-  // { method: "POST", path: "/profile/update/{id}", config: accountsController.updateProfile},
+  { method: "GET", path: "/admin", config: adminController.index},
+  { method: "GET", path: "/deleteuser/{id}", config: adminController.deleteUser },
+  { method: "GET", path: "/admin/edituser/{id}", config: adminController.editUser},
+  { method: "POST", path: "/admin/updateuser/{id}", config: adminController.updateUser},
   
   { method: "GET", path: "/login", config: accountsController.showLogin },
   { method: "GET", path: "/logout", config: accountsController.logout },

@@ -54,6 +54,10 @@ export const lighthouseJsonStore = {
     lighthouse.character = updatedLighthouse.character;
     lighthouse.daymark = updatedLighthouse.daymark;
     lighthouse.range = updatedLighthouse.range;
+    lighthouse.latitude = updatedLighthouse.latitude;
+    lighthouse.longitude = updatedLighthouse.longitude;
+    lighthouse.image = updatedLighthouse.image;
+
     await db.write();
   },
 };

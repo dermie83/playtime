@@ -6,8 +6,8 @@ export const lighthouseController = {
   index: {
     handler: async function (request, h) {
       const group = await db.groupStore.getGroupById(request.params.id);
-      console.log("groupID", groupid._id)
-      const lighthouse = await db.lighthouseStore.getLighthousesById(request.params.groupid);
+      console.log("groupID", group._id)
+      const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
       console.log("lighthouseID", lighthouse)
       const viewData = {
         title: "Lighthouses",
@@ -28,8 +28,10 @@ export const lighthouseController = {
       },
     },
     handler: async function (request, h) {
-      const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.id);
+      const group = await db.groupStore.getGroupById(request.params.id);
+      const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
       console.log("lighthouseID", lighthouse)
+      
       const newLighthouse = {
         title: request.payload.title,
         towerHeight: request.payload.towerHeight,
@@ -39,8 +41,9 @@ export const lighthouseController = {
         range: request.payload.range,
         latitude: request.payload.latitude,
         longitude: request.payload.longitude,
+        image: request.payload.image,
       };
-      await db.lighthouseStore.updateLighthouse(lighthouse._id, newLighthouse);
+      await db.lighthouseStore.updateLighthouse(lighthouse, newLighthouse);
       return h.redirect(`/group/${group._id}`);
     },
   },

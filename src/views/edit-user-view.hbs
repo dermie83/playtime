@@ -1,6 +1,8 @@
+{{> menu}}
+
 <section class="section">
-  <h1 class="title">Update Profile</h1>
-  <form action="/profile/update/{{user._id}}" method="POST">
+  <h1 class="title">Update User</h1>
+  <form action="/admin/updateuser/{{user._id}}" method="POST">
     <label class="label">Name</label>
     <div class="field is-horizontal">
       <div class="field-body">

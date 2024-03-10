@@ -22,6 +22,7 @@ export const LighthouseSpec = {
     range: Joi.number().allow("").optional(),
     latitude: Joi.allow("").optional(),
     longitude: Joi.allow("").optional(),
+    image: Joi.allow("").optional(),
   };
   
   export const GroupSpec = {
