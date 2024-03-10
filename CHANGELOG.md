@@ -10,11 +10,11 @@
 ## version 0.2.0
 - use Postman to test API urls
 - conduct tdd with chai and mocha add ons
-- connect to studio 3T
+- connect to studio 3T to access mongo db data
 - incorporate mongo db data stores
 - support delete group + users
 - introduce .env for secrets
-- include Joi schema validation for signup form
+- include Joi schema validation for signup, lighthous and group forms
 - incorporate JSON data stores
 - introduce sessions
 - associate group and lighthouse with userApi
