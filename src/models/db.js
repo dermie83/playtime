@@ -1,38 +1,38 @@
 import { userMemStore } from "./mem/user-mem-store.js";
-import { playlistMemStore } from "./mem/playlist-mem-store.js";
-import { trackMemStore } from "./mem/track-mem-store.js";
+import { groupMemStore } from "./mem/group-mem-store.js";
+import { lighthouseMemStore } from "./mem/lighthouse-mem-store.js";
 import { userJsonStore } from "./json/user-json-store.js";
-import { playlistJsonStore } from "./json/playlist-json-store.js";
-import { trackJsonStore } from "./json/track-json-store.js";
+import { groupJsonStore } from "./json/group-json-store.js";
+import { lighthouseJsonStore } from "./json/lighthouse-json-store.js";
 import { connectMongo } from "./mongo/connect.js";
 import { userMongoStore } from "./mongo/user-mongo-store.js";
-import { playlistMongoStore } from "./mongo/playlist-mongo-store.js";
-import { trackMongoStore } from "./mongo/track-mongo-store.js";
+import { groupMongoStore } from "./mongo/group-mongo-store.js";
+import { lighthouseMongoStore } from "./mongo/lighthouse-mongo-store.js";
 
 
 
 export const db = {
   userStore: null,
-  playlistStore: null,
-  trackStore: null,
+  groupStore: null,
+  lighthouseStore: null,
 
   init(storeType) {
     switch (storeType) {
       case "json":
         this.userStore = userJsonStore;
-        this.playlistStore = playlistJsonStore;
-        this.trackStore = trackJsonStore;
+        this.groupStore = groupJsonStore;
+        this.lighthouseStore = lighthouseJsonStore;
         break;
       case "mongo":
         this.userStore = userMongoStore;
-        this.playlistStore = playlistMongoStore;
-        this.trackStore = trackMongoStore;
+        this.groupStore = groupMongoStore;
+        this.lighthouseStore = lighthouseMongoStore;
         connectMongo();
         break;
       default:
         this.userStore = userMemStore;
-        this.playlistStore = playlistMemStore;
-        this.trackStore = trackMemStore;
+        this.groupStore = groupMemStore;
+        this.lighthouseStore = lighthouseMemStore;
     }
   },
 };

@@ -1,19 +1,21 @@
 import { db } from "../models/db.js";
 import { UserSpec, UserCredentialsSpec} from "../models/joi-schemas.js";
 
+
 export const accountsController = {
   index: {
     auth: false,
     handler: function (request, h) {
-      return h.view("main", { title: "Welcome to Playlist" });
+      return h.view("main", { title: "Welcome Irish Lighthouses" });
     },
   },
   showSignup: {
     auth: false,
     handler: function (request, h) {
-      return h.view("signup-view", { title: "Sign up for Playlist" });
+      return h.view("signup-view", { title: "Sign up for Irish Lighthouses" });
     },
   },
+  
   signup: {
     auth: false,
     validate: {
@@ -32,7 +34,7 @@ export const accountsController = {
   showLogin: {
     auth: false,
     handler: function (request, h) {
-      return h.view("login-view", { title: "Login to Playlist" });
+      return h.view("login-view", { title: "Login to Irish Lighthouses" });
     },
   },
   login: {

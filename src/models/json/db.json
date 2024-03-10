@@ -1,40 +1,77 @@
 {
-  "users": [],
-  "playlists": [
+  "users": [
     {
-      "title": "Beethoven Sonatas",
-      "_id": "9caa90b8-991a-4148-8bbb-8ee3d1ee4177"
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "63a2e4b0-0059-4b0e-b828-6cb99afefb3e"
     },
     {
-      "title": "Beethoven Concertos",
-      "_id": "fd4c148f-21b7-414c-9a61-701cd086bc49"
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "a14cfa0e-9f65-49af-99c7-ae774afed7c0"
     },
     {
-      "title": "Beethoven Symphonies",
-      "_id": "43c46ad7-90db-4d35-85d1-b8dbf33e8180"
+      "firstName": "Dermot",
+      "lastName": "Madsen",
+      "email": "dermiemadsen@gmail.com",
+      "password": "1234",
+      "_id": "3dbdc448-c90f-479c-9948-30b1bcb0f703"
     }
   ],
-  "tracks": [
+  "groups": [
     {
-      "title": "der",
-      "artist": "der",
-      "duration": 123,
-      "_id": "c806af83-dc99-4c2a-ae24-5699191fdb9a",
-      "playlistid": "5e0c9574-5e68-4579-8349-48c4103ead77"
+      "title": "Group2",
+      "_id": "b5486cfc-8a61-4e81-8157-128267d49da7"
     },
     {
-      "title": "der",
-      "artist": "ddd",
-      "duration": 12345,
-      "_id": "2d2b7f7a-5848-4ee4-8b8b-145049febfc6",
-      "playlistid": "5e0c9574-5e68-4579-8349-48c4103ead77"
+      "title": "Group3",
+      "_id": "81f7bf90-112d-4580-a4c6-a7ed608df075"
     },
     {
-      "title": "Der",
-      "artist": "Me",
-      "duration": 123,
-      "_id": "656a1044-d58b-4d45-84a2-c9a59e61960a",
-      "playlistid": "9719555e-5254-4664-bcd2-4e9e5f8320e9"
+      "title": "Group4",
+      "_id": "9570a5be-ed1c-4a34-8356-db47ff0265f9"
+    }
+  ],
+  "lighthouses": [
+    {
+      "title": "Hook Head",
+      "towerHeight": 35,
+      "lightHeight": 46,
+      "character": "Fl(3) W3s",
+      "daymark": "Painted Black and White",
+      "range": 23,
+      "latitude": 1,
+      "longitude": -1,
+      "_id": "da0fbf5c-a3fe-4e8d-99af-1c20ae116f54",
+      "groupid": "8d24e62c-b1ca-4a81-a5d1-c9021755b68f"
+    },
+    {
+      "title": "Skelligs Rock",
+      "towerHeight": 12,
+      "lightHeight": 53.3,
+      "character": "Fl(3) 15s",
+      "daymark": "Painted White",
+      "range": 12,
+      "latitude": 2,
+      "longitude": -2,
+      "_id": "0b07245c-f7ef-4245-82de-96ce1d8fccbf",
+      "groupid": "8d24e62c-b1ca-4a81-a5d1-c9021755b68f"
+    },
+    {
+      "title": "Galley Head",
+      "towerHeight": 21,
+      "lightHeight": 53,
+      "character": "Fl(5) W20s",
+      "daymark": "Painted White",
+      "range": 23,
+      "latitude": 3,
+      "longitude": -3,
+      "_id": "9aecf536-052e-4f32-9bd2-68fc81d0768c",
+      "groupid": "8d24e62c-b1ca-4a81-a5d1-c9021755b68f"
     }
   ]
 }

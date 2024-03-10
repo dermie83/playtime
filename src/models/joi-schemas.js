@@ -13,13 +13,19 @@ export const UserCredentialsSpec = {
     password: Joi.string().required(),
 };
 
-export const TrackSpec = {
+export const LighthouseSpec = {
     title: Joi.string().required(),
-    artist: Joi.string().required(),
-    duration: Joi.number().allow("").optional(),
-    
-};
-
-export const PlaylistSpec = {
+    towerHeight: Joi.number().allow("").optional(),
+    lightHeight: Joi.number().allow("").optional(),
+    character: Joi.string().allow("").optional(),
+    daymark: Joi.string().allow("").optional(),
+    range: Joi.number().allow("").optional(),
+    latitude: Joi.allow("").optional(),
+    longitude: Joi.allow("").optional(),
+    image: Joi.allow("").optional(),
+  };
+  
+  export const GroupSpec = {
     title: Joi.string().required(),
-};
+  };
+  

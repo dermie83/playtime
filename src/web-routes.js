@@ -1,11 +1,20 @@
 import { accountsController } from "./controllers/accounts-controller.js";
+import { adminController } from "./controllers/admin-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
-import { playlistController } from "./controllers/playlist-controller.js";
+import { groupController } from "./controllers/group-controller.js";
+import { lighthouseController } from "./controllers/lighthouse-controller.js";
+
+
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
   { method: "GET", path: "/signup", config: accountsController.showSignup },
+  { method: "GET", path: "/admin", config: adminController.index},
+  { method: "GET", path: "/deleteuser/{id}", config: adminController.deleteUser },
+  { method: "GET", path: "/admin/edituser/{id}", config: adminController.editUser},
+  { method: "POST", path: "/admin/updateuser/{id}", config: adminController.updateUser},
+  
   { method: "GET", path: "/login", config: accountsController.showLogin },
   { method: "GET", path: "/logout", config: accountsController.logout },
   { method: "POST", path: "/register", config: accountsController.signup },
@@ -13,11 +22,14 @@ export const webRoutes = [
 
   { method: "GET", path: "/about", config: aboutController.index },
 
-  { method: "GET", path: "/playlist/{id}", config: playlistController.index },
-  { method: "GET", path: "/playlist/{id}/deletetrack/{trackid}", config: playlistController.deleteTrack },
-  { method: "POST", path: "/playlist/{id}/addtrack", config: playlistController.addTrack },
-
   { method: "GET", path: "/dashboard", config: dashboardController.index },
-  { method: "GET", path: "/dashboard/deleteplaylist/{id}", config: dashboardController.deletePlaylist },
-  { method: "POST", path: "/dashboard/addplaylist", config: dashboardController.addPlaylist },
+  { method: "POST", path: "/dashboard/addgroup", config: dashboardController.addGroup },
+  { method: "GET", path: "/dashboard/deletegroup/{id}", config: dashboardController.deleteGroup },
+
+  { method: "GET", path: "/group/{id}", config: groupController.index },
+  { method: "POST", path: "/group/{id}/addlighthouse", config: groupController.addLighthouse },
+  { method: "GET", path: "/group/{id}/deletegroup/{lighthouseid}", config: groupController.deleteLighthouse },
+  { method: "GET", path: "/group/{id}/editlighthouse/{lighthouseid}", config: lighthouseController.index },
+  { method: "POST", path: "/group/{id}/updatelighthouse/{lighthouseid}", config: lighthouseController.updateLighthouse}
+
 ];

@@ -5,7 +5,7 @@ import { maggie, testUsers } from "../fixtures.js";
 
 // assert.equal(2, 2);
 
-suite("User API tests", () => {
+suite("User Model tests", () => {
 
   setup(async () => {
     db.init("mongo");
