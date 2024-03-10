@@ -10,7 +10,7 @@ The course is built using Tutors
 
 This assignment objective is to gain experience using the Hapi Node. js framework for building scalable web applications and APIs.
 
-The scope of the project is to develop a dynamic app on a the subject of (POI) points of interest.
+The scope of the project is to develop a dynamic app on the subject of (POI) points of interest.
 
 My POI is on Irish Lighthouses. 
 
