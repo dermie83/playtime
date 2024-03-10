@@ -45,8 +45,8 @@ export const lighthouseMongoStore = {
   async updateLighthouse(lighthouse, updatedLighthouse) {
     const lighthouseDoc = await Lighthouse.findOne({ _id: lighthouse._id });
     lighthouseDoc.title = updatedLighthouse.title;
-    lighthouseDoc.artist = updatedLighthouse.artist;
-    lighthouseDoc.duration = updatedLighthouse.duration;
+    // lighthouseDoc.artist = updatedLighthouse.artist;
+    // lighthouseDoc.duration = updatedLighthouse.duration;
     await lighthouseDoc.save();
   },
 

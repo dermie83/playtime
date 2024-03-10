@@ -47,6 +47,7 @@ export const lighthouseJsonStore = {
   },
 
   async updateLighthouse(lighthouse, updatedLighthouse) {
+    await db.read();
     lighthouse.title = updatedLighthouse.title;
     lighthouse.towerHeight = updatedLighthouse.towerHeight;
     lighthouse.lightHeight = updatedLighthouse.lightHeight;
