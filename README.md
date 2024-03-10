@@ -1,5 +1,4 @@
 README
-
 Full Stack Development 1 - assignment 1
 This is the source for a module on the Higher Diploma in Computer Science.
 
@@ -18,3 +17,4 @@ My POI is on Irish Lighthouses.
 The application will allow users to create a groups that contain various lighthoues around Ireland.
 The user will also be able to add descriptive features about each lighthouse e.g. location, name, daymark, character etc.
 There will also be an interactive google map showing lighthouse location by coordinates along with a table showing live weather report. 
+
