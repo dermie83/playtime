@@ -12,7 +12,7 @@ suite("Group API tests", () => {
   let user = null;
 
   setup(async () => {
-    db.init("mongo");
+    db.init("json");
     await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     user = await lighthouseService.createUser(maggie);

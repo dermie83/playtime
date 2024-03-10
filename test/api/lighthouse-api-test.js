@@ -10,7 +10,7 @@ suite("Lighthouse API tests", () => {
 
 
   setup(async () => {
-    db.init("mongo");
+    db.init("json");
     await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     await lighthouseService.deleteAllLighthouses();

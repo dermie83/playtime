@@ -6,7 +6,7 @@ import { db } from "../../src/models/db.js";
 
 suite("User API tests", () => {
   setup(async () => {
-    db.init("mongo");
+    db.init("json");
     await lighthouseService.deleteAllUsers();
     for (let i = 0; i < testUsers.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop

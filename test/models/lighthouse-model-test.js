@@ -7,7 +7,7 @@ suite("Lighthouse Model tests", () => {
   let newGroup = null;
 
   setup(async () => {
-    db.init("mongo");
+    db.init("json");
     await db.groupStore.deleteAllGroups();
     await db.lighthouseStore.deleteAllLighthouses();
     newGroup = await db.groupStore.addGroup(group1);
