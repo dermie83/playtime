@@ -10,6 +10,7 @@ export const groupMongoStore = {
   async getGroupById(id) {
     if (id) {
       const group = await Group.findOne({ _id: id }).lean();
+      console.log("Get group by ID",group);
       if (group) {
         group.lighthouses = await lighthouseMongoStore.getLighthousesByGroupId(group._id);
       }
@@ -20,6 +21,7 @@ export const groupMongoStore = {
 
   async addGroup(group) {
     const newGroup = new Group(group);
+    console.log("New Group", newGroup);
     const groupObj = await newGroup.save();
     return this.getGroupById(groupObj._id);
   },

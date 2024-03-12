@@ -16,6 +16,7 @@ export const lighthouseMongoStore = {
     lighthouse.groupid = groupId;
     // create a new lighthouse object/array
     const newLighthouse = new Lighthouse(lighthouse);
+    console.log("New Lighthouse",newLighthouse);
     // save the new lighthouse object/array
     const lighthouseObj = await newLighthouse.save();
     // return the new lighthouse object with new id

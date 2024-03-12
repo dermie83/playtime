@@ -8,6 +8,8 @@ import { lighthouseController } from "./controllers/lighthouse-controller.js";
 
 
 export const webRoutes = [
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
+
   { method: "GET", path: "/", config: accountsController.index },
   { method: "GET", path: "/signup", config: accountsController.showSignup },
   { method: "GET", path: "/admin", config: adminController.index},

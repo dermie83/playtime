@@ -67,7 +67,7 @@ export const groupApi = {
     handler: async function (request, h) {
       try {
         await db.groupStore.deleteAllGroups();
-        return h.response().code(204);
+        return h.response().code(503);
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }

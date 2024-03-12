@@ -19,7 +19,9 @@ suite("Lighthouse Model tests", () => {
 
   test("create single lighthouse", async () => {
     const newGroup1 = await db.groupStore.addGroup(group1);
+    console.log("newgroupID", newGroup1)
     const lighthouse = await db.lighthouseStore.addLighthouse(newGroup1._id, lighthouse1);
+    console.log("create lighthouse", lighthouse)
     assert.isNotNull(lighthouse._id);
     assertSubset(lighthouse1, lighthouse);
   });

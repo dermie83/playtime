@@ -11,7 +11,7 @@ suite("Lighthouse API tests", () => {
 
   setup(async () => {
     db.init("mongo");
-    await lighthouseService.deleteAllGroups();
+    // await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     await lighthouseService.deleteAllLighthouses();
     user = await lighthouseService.createUser(maggie);
