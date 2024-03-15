@@ -67,10 +67,13 @@ export const groupApi = {
     handler: async function (request, h) {
       try {
         await db.groupStore.deleteAllGroups();
-        return h.response().code(503);
+        return h.response().code(204);
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Delete all groupApi",
+    notes: "All groupApi removed from Irish Lighthouses",
   },
 };

@@ -42,8 +42,8 @@ export const lighthouseService = {
   },
 
   async deleteGroup(id) {
-    const response = await axios.delete(`${this.lighthouseUrl}/api/groups/${id}`);
-    return response;
+    const res = await axios.delete(`${this.lighthouseUrl}/api/groups/${id}`);
+    return res;
   },
 
   async deleteAllGroups() {

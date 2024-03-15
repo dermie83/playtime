@@ -1,8 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { lighthouseService } from "./lighthouse-service.js";
-import { maggie, testGroups, testLighthouses, lighthouse1, group1 } from "../fixtures.js";
-import { db } from "../../src/models/db.js";
+import { maggie, testLighthouses, lighthouse1, group1 } from "../fixtures.js";
 
 suite("Lighthouse API tests", () => {
   let user = null;
@@ -10,7 +9,7 @@ suite("Lighthouse API tests", () => {
 
 
   setup(async () => {
-    db.init("mongo");
+    // db.init("mongo");
     // await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     await lighthouseService.deleteAllLighthouses();
@@ -41,7 +40,7 @@ suite("Lighthouse API tests", () => {
     }
   });
 
-  test("Delete Lighthouse", async () => {
+  test("Delete Lighthouses", async () => {
     for (let i = 0; i < testLighthouses.length; i += 1) {
       // create a new group with multiple lighthouses
 
@@ -52,7 +51,7 @@ suite("Lighthouse API tests", () => {
     assert.equal(returnedLighthouses.length, testLighthouses.length);
     for (let i = 0; i < returnedLighthouses.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      const lighthouse = await lighthouseService.deleteLighthouse(returnedLighthouses[i]._id);
+      const lighthouse = await lighthouseService.deleteAllLighthouses(returnedLighthouses[i]._id);
     }
     returnedLighthouses = await lighthouseService.getAllLighthouses();
     assert.equal(returnedLighthouses.length, 0);

@@ -2,7 +2,6 @@ import { EventEmitter } from "events";
 import { assert } from "chai";
 import { lighthouseService } from "./lighthouse-service.js";
 import { assertSubset } from "../test-utils.js";
-import { db } from "../../src/models/db.js";
 
 import { maggie, group1, testGroups } from "../fixtures.js";
 
@@ -12,7 +11,8 @@ suite("Group API tests", () => {
   let user = null;
 
   setup(async () => {
-    db.init("mongo");
+    // db.init("mongo");
+
     await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     user = await lighthouseService.createUser(maggie);

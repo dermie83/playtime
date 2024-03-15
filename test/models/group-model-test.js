@@ -10,7 +10,7 @@ EventEmitter.setMaxListeners(25);
 suite("Group Model tests", () => {
 
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await db.groupStore.deleteAllGroups();
     for (let i = 0; i < testGroups.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop

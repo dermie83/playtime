@@ -1,41 +1,14 @@
 {
   "users": [
     {
-      "firstName": "Marge",
+      "firstName": "Maggie",
       "lastName": "Simpson",
-      "email": "marge@simpson.com",
+      "email": "maggie@simpson.com",
       "password": "secret",
-      "_id": "63a2e4b0-0059-4b0e-b828-6cb99afefb3e"
-    },
-    {
-      "firstName": "Bart",
-      "lastName": "Simpson",
-      "email": "bart@simpson.com",
-      "password": "secret",
-      "_id": "a14cfa0e-9f65-49af-99c7-ae774afed7c0"
-    },
-    {
-      "firstName": "Dermot",
-      "lastName": "Madsen",
-      "email": "dermiemadsen@gmail.com",
-      "password": "1234",
-      "_id": "3dbdc448-c90f-479c-9948-30b1bcb0f703"
+      "_id": "2c9f8b20-83b4-4751-9ae8-a14da591b2cc"
     }
   ],
-  "groups": [
-    {
-      "title": "Group2",
-      "_id": "c8d7f2c8-0306-44f7-9022-79845d81c0d7"
-    },
-    {
-      "title": "Group3",
-      "_id": "fd33ed88-3e9d-4f2d-8337-12b0760b6b68"
-    },
-    {
-      "title": "Group4",
-      "_id": "d73c51ef-01f1-4de4-8939-c8b0685b711e"
-    }
-  ],
+  "groups": [],
   "lighthouses": [
     {
       "title": "Hook Head",
@@ -46,8 +19,9 @@
       "range": 23,
       "latitude": 1,
       "longitude": -1,
-      "_id": "da0fbf5c-a3fe-4e8d-99af-1c20ae116f54",
-      "groupid": "8d24e62c-b1ca-4a81-a5d1-c9021755b68f"
+      "image": "",
+      "_id": "3df14da2-2cac-47ef-9f8c-ea315966f7a7",
+      "groupid": "7606d62d-5ffd-45e5-8434-6fc4e7fcc42f"
     },
     {
       "title": "Skelligs Rock",
@@ -58,8 +32,9 @@
       "range": 12,
       "latitude": 2,
       "longitude": -2,
-      "_id": "0b07245c-f7ef-4245-82de-96ce1d8fccbf",
-      "groupid": "8d24e62c-b1ca-4a81-a5d1-c9021755b68f"
+      "image": "",
+      "_id": "5e1603eb-71a8-475b-a6b6-a3dd6ee85393",
+      "groupid": "7606d62d-5ffd-45e5-8434-6fc4e7fcc42f"
     },
     {
       "title": "Galley Head",
@@ -70,8 +45,9 @@
       "range": 23,
       "latitude": 3,
       "longitude": -3,
-      "_id": "9aecf536-052e-4f32-9bd2-68fc81d0768c",
-      "groupid": "8d24e62c-b1ca-4a81-a5d1-c9021755b68f"
+      "image": "",
+      "_id": "66045214-91e1-4d1c-acc2-e92821ef37e2",
+      "groupid": "7606d62d-5ffd-45e5-8434-6fc4e7fcc42f"
     }
   ]
 }
