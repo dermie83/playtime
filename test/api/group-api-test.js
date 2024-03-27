@@ -11,8 +11,6 @@ suite("Group API tests", () => {
   let user = null;
 
   setup(async () => {
-    // db.init("mongo");
-
     await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     user = await lighthouseService.createUser(maggie);

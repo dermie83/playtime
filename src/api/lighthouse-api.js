@@ -54,6 +54,9 @@ export const lighthouseApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Delete all lighthousesApi",
+    notes: "All lighthousesApi removed from Irish Lighthouses",
   },
 
   deleteOne: {
