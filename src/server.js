@@ -7,12 +7,14 @@ import Cookie from "@hapi/cookie";
 import path from "path";
 import dotenv from "dotenv";
 import HapiSwagger from "hapi-swagger";
+import jwt from "hapi-auth-jwt2";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { apiRoutes } from "./api-routes.js";
+import { validate } from "./api/jwt-utils.js";
 
 const swaggerOptions = {
   info: {
@@ -32,6 +34,7 @@ async function init() {
   await server.register(Vision);
   await server.register(Cookie);
   await server.register(Inert);
+  await server.register(jwt);
 
   await server.register([
     Inert,
@@ -71,6 +74,13 @@ async function init() {
     redirectTo: "/",
     validate: accountsController.validate,
   });
+
+  server.auth.strategy("jwt", "jwt", {
+    key: process.env.cookie_password,
+    validate: validate,
+    verifyOptions: { algorithms: ["HS256"] }
+  });
+
   server.auth.default("session");
 
   db.init("mongo");

@@ -9,10 +9,14 @@ suite("Lighthouse API tests", () => {
 
 
   setup(async () => {
-    await lighthouseService.deleteAllGroups();
-    await lighthouseService.deleteAllUsers();
-    await lighthouseService.deleteAllLighthouses();
+    lighthouseService.clearAuth();
     user = await lighthouseService.createUser(maggie);
+    await lighthouseService.authenticate(maggie);
+    await lighthouseService.deleteAllGroups();
+    await lighthouseService.deleteAllLighthouses();
+    await lighthouseService.deleteAllUsers();
+    user = await lighthouseService.createUser(maggie);
+    await lighthouseService.authenticate(maggie);
     group1.userid = user._id;
     newGroup = await lighthouseService.createGroup(group1);
   });

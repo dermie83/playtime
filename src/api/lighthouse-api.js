@@ -5,7 +5,9 @@ import { validationError } from "./logger.js";
 
 export const lighthouseApi = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const lighthouses = await db.lighthouseStore.getAllLighthouses();
@@ -21,7 +23,9 @@ export const lighthouseApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.id);
@@ -41,7 +45,9 @@ export const lighthouseApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const lighthouse = await db.lighthouseStore.addLighthouse(request.params.id, request.payload);
@@ -62,7 +68,9 @@ export const lighthouseApi = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.lighthouseStore.deleteAllLighthouses();
@@ -77,7 +85,9 @@ export const lighthouseApi = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const lighthouse = await db.lighthouseStore.getLighthousById(request.params.id);

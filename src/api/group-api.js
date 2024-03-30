@@ -6,7 +6,9 @@ import { validationError } from "./logger.js";
 
 export const groupApi = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const groups = await db.groupStore.getAllGroups();
@@ -22,7 +24,9 @@ export const groupApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const group = await db.groupStore.getGroupById(request.params.id);
@@ -42,7 +46,9 @@ export const groupApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const group = request.payload;
@@ -63,7 +69,9 @@ export const groupApi = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const group = await db.groupStore.getGroupById(request.params.id);
@@ -82,7 +90,9 @@ export const groupApi = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.groupStore.deleteAllGroups();

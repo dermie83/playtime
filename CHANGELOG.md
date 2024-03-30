@@ -1,5 +1,11 @@
 # Lighthouse Changelog
 
+## version 0.4.0
+
+- Group and Lighthouse API controllers added
+- joi-schemas updated to help with API request/response and data validation
+- Incorporate JWT strategy into the Endpoints for added security
+
 ## version 0.3.1
 
 - introduce Open Weather API data

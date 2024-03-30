@@ -3,6 +3,8 @@ import { groupApi } from "./api/group-api.js";
 import { lighthouseApi } from "./api/lighthouse-api.js";
 
 export const apiRoutes = [
+  { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
+
   { method: "POST", path: "/api/users", config: userApi.create },
   { method: "GET", path: "/api/users", config: userApi.find },
   { method: "DELETE", path: "/api/users", config: userApi.deleteAll },

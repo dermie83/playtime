@@ -11,9 +11,13 @@ suite("Group API tests", () => {
   let user = null;
 
   setup(async () => {
+    lighthouseService.clearAuth();
+    user = await lighthouseService.createUser(maggie);
+    await lighthouseService.authenticate(maggie);
     await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     user = await lighthouseService.createUser(maggie);
+    await lighthouseService.authenticate(maggie);
     group1.userid = user._id;
   });
 
