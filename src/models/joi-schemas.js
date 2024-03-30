@@ -22,19 +22,39 @@ export const UserSpecPlus = UserSpec.keys({
 
 export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
-export const LighthouseSpec = {
-    title: Joi.string().required(),
-    towerHeight: Joi.number().allow("").optional(),
-    lightHeight: Joi.number().allow("").optional(),
-    character: Joi.string().allow("").optional(),
-    daymark: Joi.string().allow("").optional(),
-    range: Joi.number().allow("").optional(),
-    latitude: Joi.allow("").optional(),
-    longitude: Joi.allow("").optional(),
+
+export const LighthouseSpec = Joi.object().keys({
+    title: Joi.string().required().example("Poolbeg"),
+    towerHeight: Joi.number().allow("").optional().example("23.3"),
+    lightHeight: Joi.number().allow("").optional().example("33.3"),
+    character: Joi.string().allow("").optional().example("FL(5) W3s"),
+    daymark: Joi.string().allow("").optional().example("Painted Black and White"),
+    range: Joi.number().allow("").optional().example("50.3"),
+    latitude: Joi.allow("").optional().example("-7.222"),
+    longitude: Joi.allow("").optional().example("53.333"),
     image: Joi.allow("").optional(),
-  };
+    groupid: IdSpec,
+  }).label("LighthouseDetails");
+
+  export const LighthouseSpecPlus = LighthouseSpec.keys({
+    _id: IdSpec,
+    __v: Joi.number(),
+  }).label("LighthousePlus");
+
+  export const LighthouseArray = Joi.array().items(LighthouseSpecPlus).label("LighthouseArray");
   
-  export const GroupSpec = {
-    title: Joi.string().required(),
-  };
+  export const GroupSpec = Joi.object()
+  .keys({
+    title: Joi.string().required().example("My Custom Group"),
+    userid: IdSpec,
+    lighthouses: LighthouseArray,
+  })
+  .label("Group");
+
+  export const GroupSpecPlus = GroupSpec.keys({
+    _id: IdSpec,
+    __v: Joi.number(),
+  }).label("GroupPlus");
+
+  export const GroupArray = Joi.array().items(GroupSpecPlus).label("GroupArray");
   

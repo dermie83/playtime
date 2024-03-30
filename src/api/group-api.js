@@ -1,6 +1,8 @@
 import Boom from "@hapi/boom";
 // import { PlaylistSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import { GroupSpec, GroupSpecPlus, IdSpec, GroupArray } from "../models/joi-schemas.js";
+import { validationError } from "./logger.js";
 
 export const groupApi = {
   find: {
@@ -13,6 +15,10 @@ export const groupApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Get all GroupApi",
+    notes: "Returns details of all GroupApi",
+    response: { schema: GroupArray, failAction: validationError },
   },
 
   findOne: {
@@ -28,6 +34,11 @@ export const groupApi = {
         return Boom.serverUnavailable("No Group with this id");
       }
     },
+    tags: ["api"],
+    description: "Get a specific Group",
+    notes: "Returns a Group details",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: GroupSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -44,6 +55,11 @@ export const groupApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Create a Group",
+    notes: "Returns the newly created Group",
+    validate: { payload: GroupSpec, failAction: validationError },
+    response: { schema: GroupSpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -60,6 +76,9 @@ export const groupApi = {
         return Boom.serverUnavailable("No Group with this id");
       }
     },
+    tags: ["api"],
+    description: "Delete a Group",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
   deleteAll: {

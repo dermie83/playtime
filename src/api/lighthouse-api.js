@@ -1,5 +1,7 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
+import { LighthouseSpec, LighthouseSpecPlus, IdSpec, LighthouseArray } from "../models/joi-schemas.js";
+import { validationError } from "./logger.js";
 
 export const lighthouseApi = {
   find: {
@@ -12,6 +14,10 @@ export const lighthouseApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Get all lighthousesApi",
+    notes: "Returns details of all lighthousesApi",
+    response: { schema: LighthouseArray, failAction: validationError },
   },
 
   findOne: {
@@ -27,6 +33,11 @@ export const lighthouseApi = {
         return Boom.serverUnavailable("No lighthouse with this id");
       }
     },
+    tags: ["api"],
+    description: "Get a specific lighthouse",
+    notes: "Returns a lighthouse details",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: LighthouseSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -34,6 +45,7 @@ export const lighthouseApi = {
     handler: async function (request, h) {
       try {
         const lighthouse = await db.lighthouseStore.addLighthouse(request.params.id, request.payload);
+        console.log("Create Lighthouse test", lighthouse);
         if (lighthouse) {
           return h.response(lighthouse).code(201);
         }
@@ -42,6 +54,11 @@ export const lighthouseApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Create a Lighthouse",
+    notes: "Returns the newly created Lighthouse",
+    validate: { payload: LighthouseSpec, failAction: validationError },
+    response: { schema: LighthouseSpecPlus, failAction: validationError },
   },
 
   deleteAll: {
@@ -73,5 +90,9 @@ export const lighthouseApi = {
         return Boom.serverUnavailable("No Lighthouse with this id");
       }
     },
+    tags: ["api"],
+    description: "Delete a specific lighthouse",
+    notes: "Deletes a lighthouse from db",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };
