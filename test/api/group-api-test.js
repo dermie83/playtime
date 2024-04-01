@@ -3,7 +3,7 @@ import { assert } from "chai";
 import { lighthouseService } from "./lighthouse-service.js";
 import { assertSubset } from "../test-utils.js";
 
-import { maggie, group1, testGroups } from "../fixtures.js";
+import { maggie, group1, testGroups, maggieCredentials } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -13,11 +13,11 @@ suite("Group API tests", () => {
   setup(async () => {
     lighthouseService.clearAuth();
     user = await lighthouseService.createUser(maggie);
-    await lighthouseService.authenticate(maggie);
+    await lighthouseService.authenticate(maggieCredentials);
     await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllUsers();
     user = await lighthouseService.createUser(maggie);
-    await lighthouseService.authenticate(maggie);
+    await lighthouseService.authenticate(maggieCredentials);
     group1.userid = user._id;
   });
 

@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { lighthouseService } from "./lighthouse-service.js";
-import { maggie, testLighthouses, lighthouse1, group1 } from "../fixtures.js";
+import { maggie, testLighthouses, lighthouse1, group1, maggieCredentials } from "../fixtures.js";
 
 suite("Lighthouse API tests", () => {
   let user = null;
@@ -11,12 +11,12 @@ suite("Lighthouse API tests", () => {
   setup(async () => {
     lighthouseService.clearAuth();
     user = await lighthouseService.createUser(maggie);
-    await lighthouseService.authenticate(maggie);
+    await lighthouseService.authenticate(maggieCredentials);
     await lighthouseService.deleteAllGroups();
     await lighthouseService.deleteAllLighthouses();
     await lighthouseService.deleteAllUsers();
     user = await lighthouseService.createUser(maggie);
-    await lighthouseService.authenticate(maggie);
+    await lighthouseService.authenticate(maggieCredentials);
     group1.userid = user._id;
     newGroup = await lighthouseService.createGroup(group1);
   });

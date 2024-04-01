@@ -21,6 +21,14 @@ const swaggerOptions = {
     title: "Irish Lighthouses API",
     version: "0.1",
   },
+  securityDefinitions: {
+    jwt: {
+      type: "apiKey",
+      name: "Authorization",
+      in: "header"
+    }
+  },
+  security: [{ jwt: [] }]
 };
 
 const __filename = fileURLToPath(import.meta.url);

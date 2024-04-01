@@ -1,14 +1,19 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Joi from "joi";
 
+export const JwtAuth = Joi.object()
+  .keys({
+    success: Joi.boolean().example("true").required(),
+    token: Joi.string().example("eyJhbGciOiJND.g5YmJisIjoiaGYwNTNjAOhE.gCWGmY5-YigQw0DCBo").required(),
+}).label("JwtAuth");
+
 export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).description("a valid ID");
 
 export const UserCredentialsSpec = Joi.object()
   .keys({
     email: Joi.string().email().example("homer@simpson.com").required(),
     password: Joi.string().example("secret").required(),
-  })
-  .label("UserCredentials");
+}).label("UserCredentials");
 
 export const UserSpec = UserCredentialsSpec.keys({
   firstName: Joi.string().example("Homer").required(),
@@ -22,7 +27,6 @@ export const UserSpecPlus = UserSpec.keys({
 
 export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
-
 export const LighthouseSpec = Joi.object().keys({
     title: Joi.string().required().example("Poolbeg"),
     towerHeight: Joi.number().allow("").optional().example("23.3"),
@@ -34,27 +38,26 @@ export const LighthouseSpec = Joi.object().keys({
     longitude: Joi.allow("").optional().example("53.333"),
     image: Joi.allow("").optional(),
     groupid: IdSpec,
-  }).label("LighthouseDetails");
+}).label("LighthouseDetails");
 
-  export const LighthouseSpecPlus = LighthouseSpec.keys({
+export const LighthouseSpecPlus = LighthouseSpec.keys({
     _id: IdSpec,
     __v: Joi.number(),
-  }).label("LighthousePlus");
+}).label("LighthousePlus");
 
-  export const LighthouseArray = Joi.array().items(LighthouseSpecPlus).label("LighthouseArray");
+export const LighthouseArray = Joi.array().items(LighthouseSpecPlus).label("LighthouseArray");
   
-  export const GroupSpec = Joi.object()
+export const GroupSpec = Joi.object()
   .keys({
     title: Joi.string().required().example("My Custom Group"),
     userid: IdSpec,
     lighthouses: LighthouseArray,
-  })
-  .label("Group");
+}).label("Group");
 
-  export const GroupSpecPlus = GroupSpec.keys({
+export const GroupSpecPlus = GroupSpec.keys({
     _id: IdSpec,
     __v: Joi.number(),
-  }).label("GroupPlus");
+}).label("GroupPlus");
 
-  export const GroupArray = Joi.array().items(GroupSpecPlus).label("GroupArray");
+export const GroupArray = Joi.array().items(GroupSpecPlus).label("GroupArray");
   

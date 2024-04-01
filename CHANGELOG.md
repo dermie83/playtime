@@ -1,10 +1,12 @@
 # Lighthouse Changelog
 
 ## version 0.4.0
-
+- Introduce "seeding" of data into mongo database on application startup
 - Group and Lighthouse API controllers added
 - joi-schemas updated to help with API request/response and data validation
 - Incorporate JWT strategy into the Endpoints for added security
+- Create Authorization button in swagger for API calls
+- Use curl to check auth tokens (did not get working)
 
 ## version 0.3.1
 
