@@ -1,11 +1,14 @@
 {{> menu}}
 
-<section class="section">
-  <div class="title">
-    {{group.title}}
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered">
+    <div class="title">
+      {{group.title}}
+    </div>
+    {{> list-lighthouses}}
+    {{> add-lighthouse}}
   </div>
-  {{> add-lighthouse}}
-  {{> add-image}}
+  <div class="column">
+   {{> lighthouse-image }}
+  </div>
 </section>
-
-{{> list-lighthouses}}

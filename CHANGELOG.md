@@ -1,5 +1,9 @@
 # Lighthouse Changelog
 
+## version 0.4.1
+- introduce image upload function
+- created a cloudinary account to store and upload images
+
 ## version 0.4.0
 - Introduce "seeding" of data into mongo database on application startup
 - Group and Lighthouse API controllers added
@@ -11,7 +15,6 @@
 ## version 0.3.1
 
 - introduce Open Weather API data
-- introduce image upload function
 - advance admin account controller + views & partials
 - edit functionality for user, group and lighthouse data
 

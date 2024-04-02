@@ -11,7 +11,6 @@ const lighthouseSchema = new Schema({
   range: Number,
   latitude: Number,
   longitude: Number,
-  image: String,
 
   groupid: {
     type: Schema.Types.ObjectId,

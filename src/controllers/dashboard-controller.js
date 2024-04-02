@@ -10,13 +10,6 @@ export const dashboardController = {
       // If logged in user, render dashboard view
       const groups = await db.groupStore.getUserGroups(loggedInUser._id);
       groups.sort((a, b) => (a.title > b.title ? 1 : -1));
-    
-      // //Add latest readings to each station
-      // for (const station of sortStations) {
-      //   const readingObject = await latestReadings(station._id);
-      //   Object.assign(station, readingObject.reading);
-      // };
-      // const groups = await db.groupStore.getUserGroups(loggedInUser._id);
       const viewData = {
         title: "My Lighthouse Dashboard",
         user: loggedInUser,

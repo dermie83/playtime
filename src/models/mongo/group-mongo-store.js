@@ -41,5 +41,12 @@ export const groupMongoStore = {
 
   async deleteAllGroups() {
     await Group.deleteMany({});
-  }
+  },
+
+  async updateGroup(updatedGroup) {
+    const group = await Group.findOne({ _id: updatedGroup._id });
+    group.title = updatedGroup.title;
+    group.img = updatedGroup.img;
+    await group.save();
+  },
 };

@@ -31,6 +31,8 @@ export const webRoutes = [
   { method: "GET", path: "/group/{id}", config: groupController.index },
   { method: "POST", path: "/group/{id}/addlighthouse", config: groupController.addLighthouse },
   { method: "GET", path: "/group/{id}/deletegroup/{lighthouseid}", config: groupController.deleteLighthouse },
+  { method: "POST", path: "/group/{id}/uploadimage", config: groupController.uploadImage },
+
   { method: "GET", path: "/group/{id}/editlighthouse/{lighthouseid}", config: lighthouseController.index },
   { method: "POST", path: "/group/{id}/updatelighthouse/{lighthouseid}", config: lighthouseController.updateLighthouse}
 

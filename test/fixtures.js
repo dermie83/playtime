@@ -46,7 +46,6 @@ export const lighthouse1 = {
   "range": 23,
   "latitude": 0.00000,
   "longitude": 0.00000,
-  "image":"",
 };
 
 
@@ -75,7 +74,6 @@ export const testLighthouses = [
     "range": 23,
     "latitude": 1.00000,
     "longitude": -1.00000,
-    "image":"",
   },
   {
     "title": "Skelligs Rock",
@@ -86,7 +84,6 @@ export const testLighthouses = [
     "range": 12,
     "latitude": 2.00000,
     "longitude": -2.00000,
-    "image":"",
   },
   {
     "title": "Galley Head",
@@ -97,6 +94,5 @@ export const testLighthouses = [
     "range": 23,
     "latitude": 3.00000,
     "longitude": -3.00000,
-    "image":"",
   }
 ];
