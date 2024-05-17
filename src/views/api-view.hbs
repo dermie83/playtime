@@ -1,16 +1,87 @@
+{{> menu active="api"}}
+
 <section class="box has-text-centered">
   <h3 class="is-3 title">
     Latest Weather Reading From OpenWeather API
   </h3>
   <div class="section">
-    {{> add-api}}
-    {{> list-api-coords}}
+    <h3 class="is-5 title">
+      Timezone/City
+    </h3>
+      {{report.timezone}}<br>
+      Lat: {{lighthouse.latitude}}<br>
+      Lng: {{lighthouse.longitude}}<br>
   </div>
-<section class="section">
+  <div class="section">
+    <table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>TimeStamp</th>
+      <th>Temperature C'</th>
+      <th>WindSpeed km/h</th>
+      <th>WindDirection</th>
+      <th>Pressure</th>
+      <th>Lat</th>
+      <th>Lng</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each report}}
+    <tr>
+      <td>
+        {{code}}
+      </td>
+      <td>
+        {{timeStamp}}
+      </td>
+      <td>
+        {{temperature}}
+      </td>
+      <td>
+        {{windSpeed}}
+      </td>
+      <td>
+        {{windDirection}}
+      </td>
+      <td>
+        {{pressure}}
+      </td>
+      <td>
+        {{latitude}}
+      </td>
+      <td>
+        {{longitude}}
+      </td>
+      <td>
+      </a>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+  </div>
+  <section class="section">
+    <form action="/api/generateweather" method="POST">
+    <div class="field is-horizontal">
+        <div class="field-body">
+          <div class="field">
+        <input class="input" name="latitude" type="double" placeholder="52.1624" value="{{lighthouse.latitude}}">
+      </div>
+      <div class="field">
+        <input class="input" name="longitude" type="double" placeholder="-7.1524" value="{{lighthouse.longitude}}">
+      </div>
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <button class="button is-link">Generate API Reading</button>
+      </div>
+       <br>
+      <div class="box" id="chart"></div>
+      <div>
         <script>
           const data = {
             labels: [
-              {{#each group.lighthouse.lightHeight}}
+              {{#each reading.trendLabels}}
                 "{{this}}",
               {{/each}}
             ],
@@ -18,7 +89,7 @@
               {
                 name: "Temperature", type: "line",
                 values: [
-                  {{#each group.lighthouse.lightHeight}}
+                  {{#each reading.tempTrend}}
                     {{this}},
                   {{/each}}
                 ]
@@ -34,4 +105,7 @@
           })
         </script>
         {{> map }}
+      </div>
+    </form>
+  </section>
 </section>

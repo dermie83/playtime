@@ -22,7 +22,6 @@ export type User = {
     range: number;
     latitude: number;
     longitude: number;
-    report:[],
     
     groupid: Group | string;
   }

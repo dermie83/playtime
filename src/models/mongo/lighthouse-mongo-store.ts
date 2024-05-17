@@ -53,10 +53,6 @@ export const lighthouseMongoStore = {
     lighthouseDoc.range = updatedLighthouse.range;
     lighthouseDoc.latitude = updatedLighthouse.latitude;
     lighthouseDoc.longitude = updatedLighthouse.longitude;
-    lighthouseDoc.report = updatedLighthouse.report;
-    
-   
-
     
     await lighthouseDoc.save();
   },

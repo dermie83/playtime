@@ -9,7 +9,6 @@ const lighthouseSchema = new Schema({
     range: Number,
     latitude: Number,
     longitude: Number,
-    report: Array,
     groupid: {
         type: Schema.Types.ObjectId,
         ref: "Irish Lighthouses",

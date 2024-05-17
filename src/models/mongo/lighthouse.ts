@@ -13,7 +13,6 @@ const lighthouseSchema = new Schema<Lighthouse>({
   range: Number,
   latitude: Number,
   longitude: Number,
-  report:Array,
 
   groupid: {
     type: Schema.Types.ObjectId,
