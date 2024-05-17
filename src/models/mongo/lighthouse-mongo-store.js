@@ -1,4 +1,5 @@
 import { LighthouseMongoose } from "./lighthouse.js";
+
 export const lighthouseMongoStore = {
     async getAllLighthouses() {
         const lighthouses = await LighthouseMongoose.find().lean();
