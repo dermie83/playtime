@@ -9,6 +9,11 @@ const credentials = {
   api_key: process.env.cloudinary_key,
   api_secret: process.env.cloudinary_secret
 };
+
+declare module 'cloudinary' {
+  export function config(conf: ConfigOptions);
+};
+
 cloudinary.config(credentials);
 
 export const imageStore = {

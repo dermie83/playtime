@@ -10,7 +10,7 @@ export const groupController = {
                 group: group,
             };
             return h.view("group-view", viewData);
-        },
+        }
     },
     addLighthouse: {
         validate: {
@@ -34,27 +34,6 @@ export const groupController = {
                 longitude: groupPayload.longitude,
                 image: groupPayload.image
             };
-            // const report = {};
-            // const api = process.env.open_api;
-            // // const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey.getOpenWeatherapiKey()}`
-            // const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${newLighthouse.latitude}&lon=${newLighthouse.longitude}&units=metric&appid=${api}`
-            // const result = await axios.get(requestUrl);
-            // // console.log("API", result);
-            // if (result.status === 200) {
-            // //     report.tempTrend = [];
-            // //     report.trendLabels = [];
-            // //     const trends = result.data.daily;
-            // //     for (let i=0; i<trends.length; i += 1) {
-            // //         report.tempTrend.push(trends[i].temp.day);
-            // //         const date = new Date(trends[i].dt * 1000);
-            // //         report.trendLabels.push(`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}` );
-            //  }; const viewData = {
-            //       title: "Lighthouses",
-            //       reading: result.data.current.temp,
-            //       timezone: result.data.timezone
-            //     };
-            //     console.log("view api data", viewData)
-            //  return h.view("group-view", viewData);
             await db.lighthouseStore.addLighthouse(group._id, newLighthouse);
             return h.redirect(`/group/${group._id}`);
         },

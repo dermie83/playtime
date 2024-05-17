@@ -2,13 +2,14 @@ import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
 import { LighthouseSpec, LighthouseSpecPlus, IdSpec, LighthouseArray } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
+import { Request, ResponseToolkit } from "@hapi/hapi";
 
 export const lighthouseApi = {
   find: {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const lighthouses = await db.lighthouseStore.getAllLighthouses();
         return lighthouses;
@@ -26,7 +27,7 @@ export const lighthouseApi = {
     auth: {
       strategy: "jwt",
     },
-    async handler(request) {
+    async handler(request:Request) {
       try {
         const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.id);
         if (!lighthouse) {
@@ -48,7 +49,7 @@ export const lighthouseApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const lighthouse = await db.lighthouseStore.addLighthouse(request.params.id, request.payload);
         console.log("Create Lighthouse test", lighthouse);
@@ -71,7 +72,7 @@ export const lighthouseApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         await db.lighthouseStore.deleteAllLighthouses();
         return h.response().code(204);
@@ -88,7 +89,7 @@ export const lighthouseApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const lighthouse = await db.lighthouseStore.getLighthousById(request.params.id);
         if (!lighthouse) {

@@ -3,13 +3,14 @@ import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
 import { GroupSpec, GroupSpecPlus, IdSpec, GroupArray } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
+import { Request, ResponseToolkit } from "@hapi/hapi";
 
 export const groupApi = {
   find: {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const groups = await db.groupStore.getAllGroups();
         return groups;
@@ -27,7 +28,7 @@ export const groupApi = {
     auth: {
       strategy: "jwt",
     },
-    async handler(request) {
+    async handler(request:Request) {
       try {
         const group = await db.groupStore.getGroupById(request.params.id);
         if (!group) {
@@ -49,7 +50,7 @@ export const groupApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const group = request.payload;
         const newGroup = await db.groupStore.addGroup(group);
@@ -72,7 +73,7 @@ export const groupApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const group = await db.groupStore.getGroupById(request.params.id);
         if (!group) {
@@ -93,7 +94,7 @@ export const groupApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         await db.groupStore.deleteAllGroups();
         return h.response().code(204);

@@ -39,6 +39,27 @@ export const seedData = {
       range: 23,
       latitude: 53.333,
       longitude: -7.444,
+      report: {temperature: 17.78,
+      tempTrend: [
+        15.06,
+        14.68,
+        14.57,
+        15.43,
+        15.07,
+        14.55,
+        16.54,
+        16.7
+      ],
+      trendLabels: [
+        "25/8/2023",
+        "26/8/2023",
+        "27/8/2023",
+        "28/8/2023",
+        "29/8/2023",
+        "30/8/2023",
+        "31/8/2023",
+        "1/9/2023"
+      ],},
         groupid: "->groups.myTestGroup"
       },
     }

@@ -4,6 +4,7 @@ import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { groupController } from "./controllers/group-controller.js";
 import { lighthouseController } from "./controllers/lighthouse-controller.js";
+import { weatherController } from "./controllers/weather-controller.js";
 
 
 
@@ -29,11 +30,14 @@ export const webRoutes = [
   { method: "GET" as const, path: "/dashboard/deletegroup/{id}", config: dashboardController.deleteGroup },
 
   { method: "GET" as const, path: "/group/{id}", config: groupController.index },
+  { method: "GET" as const, path: "/api/{id}/apicoord/{lighthouseid}", config: weatherController.indexAPI},
+  { method: "POST" as const, path: "/api/{id}/postweather/{lighthouseid}", config: weatherController.generateWeatherReport},
   { method: "POST" as const, path: "/group/{id}/addlighthouse", config: groupController.addLighthouse },
   { method: "GET" as const, path: "/group/{id}/deletegroup/{lighthouseid}", config: groupController.deleteLighthouse },
   { method: "POST" as const, path: "/group/{id}/uploadimage", config: groupController.uploadImage },
 
+  
   { method: "GET" as const, path: "/group/{id}/editlighthouse/{lighthouseid}", config: lighthouseController.index },
-  { method: "POST" as const, path: "/group/{id}/updatelighthouse/{lighthouseid}", config: lighthouseController.updateLighthouse}
+  { method: "POST" as const, path: "/group/{id}/updatelighthouse/{lighthouseid}", config: lighthouseController.updateLighthouse},
 
 ];

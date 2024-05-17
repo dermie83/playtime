@@ -10,7 +10,7 @@ export const groupMongoStore = {
             const group = await GroupMongoose.findOne({ _id: id }).lean();
             console.log("Get group by ID", group);
             if (group) {
-                group._lighthouses = await lighthouseMongoStore.getLighthousesByGroupId(group._id);
+                group.lighthouses = await lighthouseMongoStore.getLighthousesByGroupId(group._id);
             }
             return group;
         }

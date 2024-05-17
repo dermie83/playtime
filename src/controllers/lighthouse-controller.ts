@@ -42,7 +42,7 @@ export const lighthouseController = {
         range: lighthousePayload.range,
         latitude: lighthousePayload.latitude,
         longitude: lighthousePayload.longitude,
-        image: lighthousePayload.image,
+        
       };
       await db.lighthouseStore.updateLighthouse(lighthouse, newLighthouse);
       return h.redirect(`/group/${group._id}`);

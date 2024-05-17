@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { db } from "../models/db.js";
 import { User } from "../types/donation-types.js";
 
+
 dotenv.config();
 const cookiePassword = process.env.cookie_password as string;
 

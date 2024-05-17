@@ -1,5 +1,4 @@
 import Mongoose from "mongoose";
-
 const { Schema } = Mongoose;
 const lighthouseSchema = new Schema({
     title: String,
@@ -10,6 +9,7 @@ const lighthouseSchema = new Schema({
     range: Number,
     latitude: Number,
     longitude: Number,
+    report: Array,
     groupid: {
         type: Schema.Types.ObjectId,
         ref: "Irish Lighthouses",

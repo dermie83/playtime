@@ -1,0 +1,46 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>TimeStamp</th>
+      <th>Temperature C'</th>
+      <th>WindSpeed km/h</th>
+      <th>WindDirection</th>
+      <th>Pressure</th>
+      <th>Lat</th>
+      <th>Lng</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each reports}}
+    <tr>
+      <td>
+        {{code}}
+      </td>
+      <td>
+        {{timeStamp}}
+      </td>
+      <td>
+        {{temperature}}
+      </td>
+      <td>
+        {{windSpeed}}
+      </td>
+      <td>
+        {{windDirection}}
+      </td>
+      <td>
+        {{pressure}}
+      </td>
+      <td>
+        {{latitude}}
+      </td>
+      <td>
+        {{longitude}}
+      </td>
+      <td>
+      </a>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -85,11 +85,12 @@ export const userApi = {
         auth: false,
         handler: async function (request, h) {
             try {
-                const user = await db.userStore.getUserByEmail(request.payload.email);
+                const authPayload = request.payload;
+                const user = await db.userStore.getUserByEmail(authPayload.email);
                 if (!user) {
                     return Boom.unauthorized("User not found");
                 }
-                if (user.password !== request.payload.password) {
+                if (user.password !== authPayload.password) {
                     return Boom.unauthorized("Invalid password");
                 }
                 const token = createToken(user);

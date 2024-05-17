@@ -3,6 +3,7 @@ import { db } from "../models/db.js";
 import { JwtAuth, UserCredentialsSpec, UserSpec, UserSpecPlus, IdSpec, UserArray } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
 import { createToken } from "./jwt-utils.js";
+import { Request, ResponseToolkit } from "@hapi/hapi";
 
 export const userApi = {
 
@@ -10,7 +11,7 @@ export const userApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const users = await db.userStore.getAllUsers();
         return users;
@@ -28,7 +29,7 @@ export const userApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const user = await db.userStore.getUserById(request.params.id);
         if (!user) {
@@ -48,7 +49,7 @@ export const userApi = {
 
   create: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         const user = await db.userStore.addUser(request.payload);
         if (user) {
@@ -70,7 +71,7 @@ export const userApi = {
     auth: {
       strategy: "jwt",
     },
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
         await db.userStore.deleteAll();
         return h.response().code(204);
@@ -85,13 +86,14 @@ export const userApi = {
 
   authenticate: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function (request:Request, h:ResponseToolkit) {
       try {
-        const user = await db.userStore.getUserByEmail(request.payload.email);
+        const authPayload = request.payload as any;
+        const user = await db.userStore.getUserByEmail(authPayload.email);
         if (!user) {
           return Boom.unauthorized("User not found");
         }
-        if (user.password !== request.payload.password) {
+        if (user.password !== authPayload.password) {
           return Boom.unauthorized("Invalid password");
         }
         const token = createToken(user);
