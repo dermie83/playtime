@@ -9,79 +9,18 @@
       Timezone/City
     </h3>
       {{report.timezone}}<br>
-      Lat: {{lighthouse.latitude}}<br>
-      Lng: {{lighthouse.longitude}}<br>
+      Lat: {{report.lat}}<br>
+      Lng: {{report.lng}}<br>
   </div>
   <div class="section">
-    <table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>TimeStamp</th>
-      <th>Temperature C'</th>
-      <th>WindSpeed km/h</th>
-      <th>WindDirection</th>
-      <th>Pressure</th>
-      <th>Lat</th>
-      <th>Lng</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each report}}
-    <tr>
-      <td>
-        {{code}}
-      </td>
-      <td>
-        {{timeStamp}}
-      </td>
-      <td>
-        {{temperature}}
-      </td>
-      <td>
-        {{windSpeed}}
-      </td>
-      <td>
-        {{windDirection}}
-      </td>
-      <td>
-        {{pressure}}
-      </td>
-      <td>
-        {{latitude}}
-      </td>
-      <td>
-        {{longitude}}
-      </td>
-      <td>
-      </a>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+   {{> list-api-readings}}
   </div>
-  <section class="section">
-    <form action="/api/generateweather" method="POST">
-    <div class="field is-horizontal">
-        <div class="field-body">
-          <div class="field">
-        <input class="input" name="latitude" type="double" placeholder="52.1624" value="{{lighthouse.latitude}}">
-      </div>
-      <div class="field">
-        <input class="input" name="longitude" type="double" placeholder="-7.1524" value="{{lighthouse.longitude}}">
-      </div>
-        </div>
-      </div>
-      <div class="field is-grouped">
-        <button class="button is-link">Generate API Reading</button>
-      </div>
-       <br>
       <div class="box" id="chart"></div>
       <div>
         <script>
           const data = {
             labels: [
-              {{#each reading.trendLabels}}
+              {{#each report.trendLabels}}
                 "{{this}}",
               {{/each}}
             ],
@@ -89,7 +28,7 @@
               {
                 name: "Temperature", type: "line",
                 values: [
-                  {{#each reading.tempTrend}}
+                  {{#each report.tempTrend}}
                     {{this}},
                   {{/each}}
                 ]
@@ -104,7 +43,7 @@
             height: 250,
           })
         </script>
-        {{> map }}
+        {{!-- {{> map }} --}}
       </div>
     </form>
   </section>

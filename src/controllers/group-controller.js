@@ -1,6 +1,7 @@
 import { db } from "../models/db.js";
 import { LighthouseSpec } from "../models/joi-schemas.js";
 import { imageStore } from "../models/image-store.js";
+
 export const groupController = {
     index: {
         handler: async function (request, h) {

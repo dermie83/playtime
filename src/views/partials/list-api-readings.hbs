@@ -12,35 +12,24 @@
     </tr>
   </thead>
   <tbody>
-    {{#each report}}
     <tr>
       <td>
-        {{code}}
+        {{report.timeStamp}}
       </td>
       <td>
-        {{timeStamp}}
+        {{report.temperature}}
       </td>
       <td>
-        {{temperature}}
+        {{report.windSpeed}}
       </td>
       <td>
-        {{windSpeed}}
+        {{report.windDirection}}
       </td>
       <td>
-        {{windDirection}}
-      </td>
-      <td>
-        {{pressure}}
-      </td>
-      <td>
-        {{latitude}}
-      </td>
-      <td>
-        {{longitude}}
+        {{report.pressure}}
       </td>
       <td>
       </a>
     </tr>
-    {{/each}}
   </tbody>
 </table>
