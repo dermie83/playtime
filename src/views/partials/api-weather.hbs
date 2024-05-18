@@ -2,19 +2,17 @@
   <thead>
     <tr>
       <th>Code</th>
-      <th>TimeStamp</th>
       <th>Temperature C'</th>
       <th>WindSpeed km/h</th>
       <th>WindDirection</th>
       <th>Pressure</th>
-      <th>Lat</th>
-      <th>Lng</th>
+      <th>Visibility M</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-        {{report.timeStamp}}
+        {{report.code}}
       </td>
       <td>
         {{report.temperature}}
@@ -27,6 +25,9 @@
       </td>
       <td>
         {{report.pressure}}
+      </td>
+      <td>
+        {{report.visibility}}
       </td>
       <td>
       </a>

@@ -1,5 +1,6 @@
 import { lighthouseMongoStore } from "./lighthouse-mongo-store.js";
 import { GroupMongoose } from "./group.js";
+
 export const groupMongoStore = {
     async getAllGroups() {
         const groups = await GroupMongoose.find().lean();

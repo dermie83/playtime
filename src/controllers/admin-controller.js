@@ -1,6 +1,7 @@
 // import { lighthouseSpec } from "../models/joi-schemas.js";
 import { UserSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+
 export const adminController = {
     index: {
         handler: async function (request, h) {

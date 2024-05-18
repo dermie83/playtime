@@ -26,6 +26,11 @@ export const seedData = {
             title: "Test Group 1",
             img: "http://res.cloudinary.com/dbx8kj5x4/image/upload/v1712088094/erxlob4tqjqne8wfdjr8.jpg",
             userid: "->users.bart"
+        },
+        myTestGroup2: {
+            title: "Test Group 2",
+            img: "http://res.cloudinary.com/dbx8kj5x4/image/upload/v1712088094/erxlob4tqjqne8wfdjr8.jpg",
+            userid: "->users.bart"
         }
     },
     lighthouses: {
@@ -39,8 +44,22 @@ export const seedData = {
             range: 23,
             latitude: 53.333,
             longitude: -7.444,
+            img: "http://res.cloudinary.com/dbx8kj5x4/image/upload/v1712088094/erxlob4tqjqne8wfdjr8.jpg",
             
             groupid: "->groups.myTestGroup"
         },
-    }
+        Lighthouse_2: {
+            title: "Lighthouse 2",
+            towerHeight: 35,
+            lightHeight: 46,
+            character: "Fl(3) W3s",
+            daymark: "Painted Black and White",
+            range: 23,
+            latitude: 53.333,
+            longitude: -7.444,
+            img: "http://res.cloudinary.com/dbx8kj5x4/image/upload/v1712088094/erxlob4tqjqne8wfdjr8.jpg",
+            
+            groupid: "->groups.myTestGroup2"
+        },
+    },
 };

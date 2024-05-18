@@ -1,0 +1,84 @@
+  <div class="tile is-ancestor has-background-info-light">
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <span class="icon-text has-text-info">
+        <span class="icon is-large fas fa-2x">
+          <i class="fa-solid fa-location-dot"></i>
+        </span>
+        </span>
+        <p class="is-3 title">{{report.timezone}}</p><br>
+        <p class="subtitle">
+        Lat: {{report.lat}}<br>
+        Lng: {{report.lng}}<br>
+        </p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <span class="icon-text has-text-grey">
+        <span class="icon is-large fas fa-2x">
+        <i class="fa fa-binoculars" aria-hidden="true"></i>
+        </span>
+        </span>
+        <p class="title">Visibility</p><br>
+        <p class="subtitle">{{report.visibilityToText}}</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <span class="icon-text has-text-grey">
+        <span class="icon is-large fas fa-2x">
+        <img src="{{report.codeIcon}}">
+        </span>
+        </span>
+        <p class="title">Weather</p><br>
+        <p class="subtitle">{{report.codeText}}</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <a>
+          <span class="icon-text has-text-info">
+          <span class="icon is-large fas fa-2x">
+          <i class="fa-solid fa-temperature-high"></i>
+          </span>
+          </span>
+        </a>
+        <p class="title">Temp</p><br>
+        <p class="subtitle">{{report.temperature}} C<br>
+           {{report.farhn}} F<br>
+        </p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <a>
+          <span class="icon-text has-text-dark">
+          <span class="icon is-large fas fa-2x">
+          <img src="https://cdn.glitch.global/0fa94a6d-c73c-4106-b4c8-60a78df7dea0/wind-beaufort-{{report.windSpeedBFT}}.svg">
+          </span>
+          </span>
+        </a>
+        <p class="title">Wind</p><br>
+        <p class="subtitle">
+          Direction: {{report.windDirectionText}}<br>
+          Feels like: {{report.windChill}} C<br>
+        </p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <a>
+          <span class="icon-text has-text-dark">
+          <span class="icon is-large fas fa-2x">
+          <i class="fa-solid fa-gauge-simple-high"></i>
+          </span>
+          </span>
+        </a>
+        <p class="title">Pressure</p><br>
+        <p class="subtitle">{{report.pressure}} hPa<br>
+        
+        </p> 
+      </article>
+    </div>
+  </div>

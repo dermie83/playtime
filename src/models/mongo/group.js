@@ -1,4 +1,5 @@
 import Mongoose from "mongoose";
+
 const { Schema } = Mongoose;
 const groupSchema = new Schema({
     title: String,

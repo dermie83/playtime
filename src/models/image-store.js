@@ -1,6 +1,7 @@
 import * as cloudinary from "cloudinary";
 import { writeFileSync } from "fs";
 import dotenv from "dotenv";
+
 dotenv.config();
 const credentials = {
     cloud_name: process.env.cloudinary_name,

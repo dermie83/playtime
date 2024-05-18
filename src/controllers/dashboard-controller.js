@@ -9,11 +9,13 @@ export const dashboardController = {
             // If logged in user, render dashboard view
             const groups = await db.groupStore.getUserGroups(loggedInUser._id);
             groups.sort((a, b) => (a.title > b.title ? 1 : -1));
+
             const viewData = {
                 title: "My Lighthouse Dashboard",
                 user: loggedInUser,
                 groups: groups,
             };
+
             return h.view("dashboard-view", viewData);
         },
     },

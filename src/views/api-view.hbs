@@ -5,17 +5,12 @@
     Latest Weather Reading From OpenWeather API
   </h3>
   <div class="section">
-    <h3 class="is-5 title">
-      Timezone/City
-    </h3>
-      {{report.timezone}}<br>
-      Lat: {{report.lat}}<br>
-      Lng: {{report.lng}}<br>
+   {{> api-dynamic-weather}}
+   {{> api-weather}}
   </div>
-  <div class="section">
-   {{> list-api-readings}}
-  </div>
-      <div class="box" id="chart"></div>
+      <div class="box" id="chart">
+      </div>
+      <div>
       <div>
         <script>
           const data = {
@@ -43,8 +38,9 @@
             height: 250,
           })
         </script>
-        {{!-- {{> map }} --}}
+         <div class="section">
+          {{> map  }}
+         </div>
       </div>
-    </form>
   </section>
 </section>
