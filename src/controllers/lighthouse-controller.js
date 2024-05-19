@@ -39,36 +39,9 @@ export const lighthouseController = {
                 range: lighthousePayload.range,
                 latitude: lighthousePayload.latitude,
                 longitude: lighthousePayload.longitude,
-                img:lighthousePayload.longitude,
             };
             await db.lighthouseStore.updateLighthouse(lighthouse, newLighthouse);
             return h.redirect(`/group/${group._id}`);
         },
     },
-    // uploadImage: {
-    //     handler: async function (request, h) {
-    //         try {
-    //             const group = await db.groupStore.getGroupById(request.params.id);
-    //             const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
-    //             const imagePayload = request.payload;
-    //             const file = imagePayload.imagefile;
-    //             if (Object.keys(file).length > 0) {
-    //                 const url = await imageStore.uploadImage(imagePayload.imagefile);
-    //                 lighthouse.img = url;
-    //                 await db.lighthouseStore.updateLighthouse(lighthouse);
-    //             }
-    //             return h.redirect(`/group/${group._id}`);
-    //         }
-    //         catch (err) {
-    //             console.log(err);
-    //             return h.view("main", { errors: [{ message: err.message }] });
-    //         }
-    //     },
-    //     payload: {
-    //         multipart: true,
-    //         output: "data",
-    //         maxBytes: 209715200,
-    //         parse: true,
-    //     },
-    // },
 };

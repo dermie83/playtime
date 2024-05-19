@@ -38,8 +38,9 @@ export const lighthouseMongoStore = {
     async deleteAllLighthouses() {
         await LighthouseMongoose.deleteMany({});
     },
-    async updateLighthouse(lighthouseid, updatedLighthouse) {
-        const lighthouseDoc = await LighthouseMongoose.findOne({ _id: lighthouseid });
+    async updateLighthouse(id, updatedLighthouse) {
+        const lighthouseDoc = await LighthouseMongoose.findOne({ _id: id });
+        console.log("lighthouseDoc: ",lighthouseDoc);
         lighthouseDoc.title = updatedLighthouse.title;
         lighthouseDoc.lightHeight = updatedLighthouse.lightHeight;
         lighthouseDoc.character = updatedLighthouse.character;
@@ -50,4 +51,13 @@ export const lighthouseMongoStore = {
         lighthouseDoc.img = updatedLighthouse.img;
         await lighthouseDoc.save();
     },
+    async updateImage(id, updatedLighthouse) {
+        const lighthouseDoc = await LighthouseMongoose.findOne({ _id: id });
+        console.log("lighthouseDoc: ",lighthouseDoc);
+        
+        lighthouseDoc.img = updatedLighthouse.img;
+        await lighthouseDoc.save();
+    },
+    
+    
 };
