@@ -6,11 +6,13 @@ import { seedData } from "./seed-data.js";
 import { userMongoStore } from "./user-mongo-store.js";
 import { lighthouseMongoStore } from "./lighthouse-mongo-store.js";
 import { groupMongoStore } from "./group-mongo-store.js";
+
+
 const seedLib = mongooseSeeder.default;
 async function seed() {
     const seeder = seedLib(Mongoose);
     const dbData = await seeder.seed(seedData, { dropDatabase: false, dropCollections: true });
-    console.log(dbData);
+    // console.log(dbData);
 }
 export function connectMongo(db) {
     dotenv.config();
@@ -21,13 +23,13 @@ export function connectMongo(db) {
     db.lighthouseStore = lighthouseMongoStore;
     db.groupStore = groupMongoStore;
     mongodb.on("error", (err) => {
-        console.log(`database connection error: ${err}`);
+        // console.log(`database connection error: ${err}`);
     });
     mongodb.on("disconnected", () => {
-        console.log("database disconnected");
+        // console.log("database disconnected");
     });
     mongodb.once("open", function () {
-        console.log(`database connected to ${this.name} on ${this.host}`);
+        // console.log(`database connected to ${this.name} on ${this.host}`);
         seed();
     });
 }

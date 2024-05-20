@@ -5,7 +5,7 @@ export const dashboardController = {
     index: {
         handler: async function (request, h) {
             const loggedInUser = request.auth.credentials;
-            console.log("loggedInUser ", loggedInUser._id);
+            // console.log("loggedInUser ", loggedInUser._id);
             // If logged in user, render dashboard view
             const groups = await db.groupStore.getUserGroups(loggedInUser._id);
 
@@ -39,7 +39,7 @@ export const dashboardController = {
                 lat:lat,
                 lng:lng,
             };
-            console.log(viewData)
+            // console.log(viewData)
             return h.view("dashboard-view", viewData);
         },
     },
@@ -86,7 +86,7 @@ export const dashboardController = {
           },
         },
         handler: async function (request, h) {
-          console.log("Editing groupID: ", request.params.id);
+          // console.log("Editing groupID: ", request.params.id);
           const group = await db.groupStore.getGroupById(request.params.id);
           const groupID = group._id;
     

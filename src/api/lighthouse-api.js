@@ -50,7 +50,7 @@ export const lighthouseApi = {
         handler: async function (request, h) {
             try {
                 const lighthouse = await db.lighthouseStore.addLighthouse(request.params.id, request.payload);
-                console.log("Create Lighthouse test", lighthouse);
+                // console.log("Create Lighthouse test", lighthouse);
                 if (lighthouse) {
                     return h.response(lighthouse).code(201);
                 }

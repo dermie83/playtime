@@ -35,7 +35,7 @@ const swaggerOptions = {
 function importEnvs() {
     const result = dotenv.config();
     if (result.error) {
-        console.log(result.error.message);
+        // console.log(result.error.message);
         process.exit(1);
     }
 }
@@ -94,10 +94,10 @@ async function init() {
     server.route(webRoutes);
     server.route(apiRoutes);
     await server.start();
-    console.log(`Server running at: ${server.info.uri}`);
+    // console.log(`Server running at: ${server.info.uri}`);
 }
 process.on("unhandledRejection", (err) => {
-    console.log(err);
+    // console.log(err);
     process.exit(1);
 });
 await init();

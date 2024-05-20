@@ -26,7 +26,7 @@ export const userMongoStore = {
             await UserMongoose.deleteOne({ _id: id });
         }
         catch (error) {
-            console.log("bad id");
+            // console.log("bad id");
         }
     },
     async deleteAll() {

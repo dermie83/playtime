@@ -6,30 +6,30 @@ export const lighthouseController = {
     index: {
         handler: async function (request, h) {
             const group = await db.groupStore.getGroupById(request.params.id);
-            console.log("groupID", group._id);
+            // console.log("groupID", group._id);
             const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
-            console.log("lighthouseID", lighthouse);
+            // console.log("lighthouseID", lighthouse);
             const viewData = {
                 title: "Lighthouses",
                 group: group,
                 lighthouse: lighthouse,
             };
-            console.log("viewdata", viewData);
+            // console.log("viewdata", viewData);
             return h.view("edit-lighthouse-view", viewData);
         },
     },
     imageIndex: {
         handler: async function (request, h) {
             const group = await db.groupStore.getGroupById(request.params.id);
-            console.log("groupID", group._id);
+            // console.log("groupID", group._id);
             const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
-            console.log("lighthouseID", lighthouse);
+            // console.log("lighthouseID", lighthouse);
             const viewData = {
                 title: "Lighthouses",
                 group: group,
                 lighthouse: lighthouse,
             };
-            console.log("viewdata", viewData);
+            // console.log("viewdata", viewData);
             return h.view("edit-image-view", viewData);
         },
     },
@@ -44,7 +44,7 @@ export const lighthouseController = {
         handler: async function (request, h) {
             const group = await db.groupStore.getGroupById(request.params.id);
             const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
-            console.log("lighthouseID", lighthouse);
+            // console.log("lighthouseID", lighthouse);
             const lighthousePayload = request.payload;
             const newLighthouse = {
                 title: lighthousePayload.title,
@@ -64,28 +64,28 @@ export const lighthouseController = {
         handler: async function (request, h) {
             try {
                 const group = await db.groupStore.getGroupById(request.params.id);
-                console.log("Get group id: ",group);
+                // console.log("Get group id: ",group);
                 const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
-                console.log("lighthouseID", lighthouse);
+                // console.log("lighthouseID", lighthouse);
                 const imagePayload = request.payload;
-                console.log("Get img payload: ",imagePayload);
+                // console.log("Get img payload: ",imagePayload);
                 const file = imagePayload.imagefile;
-                console.log("Get image file: ",file)
+                // console.log("Get image file: ",file)
                 if (Object.keys(file).length > 0) {
                     const url = await imageStore.uploadImage(imagePayload.imagefile);
-                    console.log("URL ",url);
+                    // console.log("URL ",url);
                     
                     const newImg = {
                         img:url,
                     };
-                    console.log("New IMG: ", newImg.img);            
+                    // console.log("New IMG: ", newImg.img);            
                     
                     await db.lighthouseStore.updateImage(lighthouse, newImg);
                  }
                 return h.redirect(`/group/${group._id}`);
             }
             catch (err) {
-                console.log(err);
+                // console.log(err);
                 return h.view("main", { errors: [{ message: err.message }] });
             }
         },

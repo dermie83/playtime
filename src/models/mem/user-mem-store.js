@@ -10,7 +10,7 @@ export const userMemStore = {
   async addUser(user) {
     user._id = v4();
     users.push(user);
-    console.log(`Added UserId ${  user._id}`);
+    // console.log(`Added UserId ${  user._id}`);
     return user;
   },
 

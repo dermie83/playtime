@@ -8,9 +8,9 @@ export const weatherController = {
     indexAPI: {
         handler: async function (request, h) {
             const group = await db.groupStore.getGroupById(request.params.id);
-            console.log("groupID", group._id);
+            // console.log("groupID", group._id);
             const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
-            console.log("lighthouseID", lighthouse);
+            // console.log("lighthouseID", lighthouse);
 
             const lat =  lighthouse.latitude;
             const lng =  lighthouse.longitude;
@@ -18,7 +18,7 @@ export const weatherController = {
             const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey.getOpenWeatherapiKey()}`
             const result = await axios.get(requestUrl);
             if (result.status === 200) {
-                console.log(result);
+                // console.log(result);
 
                 report.title = lighthouse.title
                 
@@ -68,7 +68,7 @@ export const weatherController = {
                 };
 
 
-            console.log("viewdata", viewData1);
+            // console.log("viewdata report", viewData1.report);
             return h.view("api-view", viewData1);
         }
     },

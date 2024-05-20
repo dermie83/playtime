@@ -7,7 +7,7 @@ export const groupController = {
             const group = await db.groupStore.getGroupById(request.params.id);
             const lighthouses = await db.lighthouseStore.getLighthousesByGroupId(group._id);
             // const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
-            console.log("Lighthouses by Group", lighthouses);
+            // console.log("Lighthouses by Group", lighthouses);
             
             const viewData = {
                 title: "Lighthouses",
@@ -15,7 +15,7 @@ export const groupController = {
                 lighthouses:lighthouses,
             };
 
-            console.log("img by viewData", viewData.lighthouses.img);
+            console.log("Group Controller viewData", viewData.lighthouses);
             return h.view("group-view", viewData);
         }
     },

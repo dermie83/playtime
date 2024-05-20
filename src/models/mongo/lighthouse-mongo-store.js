@@ -14,7 +14,7 @@ export const lighthouseMongoStore = {
         lighthouse.groupid = groupId;
         // create a new lighthouse object/array
         const newLighthouse = new LighthouseMongoose(lighthouse);
-        console.log("New Lighthouse", newLighthouse);
+        // console.log("New Lighthouse", newLighthouse);
         // save the new lighthouse object/array
         const lighthouseObj = await newLighthouse.save();
         // return the new lighthouse object with new id
@@ -32,7 +32,7 @@ export const lighthouseMongoStore = {
             await LighthouseMongoose.deleteOne({ _id: id });
         }
         catch (error) {
-            console.log("bad id");
+            // console.log("bad id");
         }
     },
     async deleteAllLighthouses() {
@@ -40,7 +40,7 @@ export const lighthouseMongoStore = {
     },
     async updateLighthouse(groupID, updatedLighthouse) {
         const lighthouseDoc = await LighthouseMongoose.findOne({ _id: groupID });
-        console.log("lighthouseDoc: ",lighthouseDoc);
+        // console.log("lighthouseDoc: ",lighthouseDoc);
         lighthouseDoc.title = updatedLighthouse.title;
         lighthouseDoc.lightHeight = updatedLighthouse.lightHeight;
         lighthouseDoc.character = updatedLighthouse.character;
@@ -53,7 +53,7 @@ export const lighthouseMongoStore = {
     },
     async updateImage(groupID, updatedLighthouse) {
         const lighthouseDoc = await LighthouseMongoose.findOne({ _id: groupID });
-        console.log("lighthouseDoc: ",lighthouseDoc);
+        // console.log("lighthouseDoc: ",lighthouseDoc);
         lighthouseDoc.img = updatedLighthouse.img;
         await lighthouseDoc.save();
     },

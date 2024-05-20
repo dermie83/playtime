@@ -13,13 +13,13 @@ export const adminController = {
                 UserLoggedIn: loggedInUser,
                 users: users,
             };
-            console.log("viewData", viewData);
+            // console.log("viewData", viewData);
             return h.view("admin-view", viewData);
         },
     },
     editUser: {
         handler: async function (request, h) {
-            console.log("Editing User: ", request.params.id);
+            // console.log("Editing User: ", request.params.id);
             const loggedInUser = request.auth.credentials;
             const user = await db.userStore.getUserById(request.params.id);
             const viewData = {
@@ -27,7 +27,7 @@ export const adminController = {
                 UserLoggedIn: loggedInUser,
                 user: user,
             };
-            console.log("viewData", viewData);
+            // console.log("viewData", viewData);
             return h.view("edit-user-view", viewData);
         },
     },
@@ -43,14 +43,14 @@ export const adminController = {
         handler: async function (request, h) {
             const user = await db.userStore.getUserById(request.params.id);
             const adminPayload = request.payload;
-            console.log("loggedInUserID", user);
+            // console.log("loggedInUserID", user);
             const updateUser = {
                 firstName: adminPayload.firstName,
                 lastName: adminPayload.lastName,
                 password: adminPayload.password,
                 email: adminPayload.email,
             };
-            console.log("updateuser", updateUser);
+            // console.log("updateuser", updateUser);
             await db.userStore.updateUser(user._id, updateUser);
             return h.redirect("/admin");
         },

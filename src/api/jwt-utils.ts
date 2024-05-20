@@ -30,7 +30,7 @@ export function decodeToken(token: string): JwtPayload | null {
       scope: decoded.scope,
     } as JwtPayload;
   } catch (e: any) {
-    console.log(e.message);
+    // console.log(e.message);
   }
   return null;
 }

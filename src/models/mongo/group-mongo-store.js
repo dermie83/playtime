@@ -9,7 +9,7 @@ export const groupMongoStore = {
     async getGroupById(id) {
         if (id) {
             const group = await GroupMongoose.findOne({ _id: id }).lean();
-            console.log("Get group by ID", group);
+            // console.log("Get group by ID", group);
             if (group) {
                 group.lighthouses = await lighthouseMongoStore.getLighthousesByGroupId(group._id);
             }
@@ -19,7 +19,7 @@ export const groupMongoStore = {
     },
     async addGroup(group) {
         const newGroup = new GroupMongoose(group);
-        console.log("New Group", newGroup);
+        // console.log("New Group", newGroup);
         const groupObj = await newGroup.save();
         return this.getGroupById(groupObj._id);
     },
@@ -32,7 +32,7 @@ export const groupMongoStore = {
             await GroupMongoose.deleteOne({ _id: id });
         }
         catch (error) {
-            console.log("bad id");
+            // console.log("bad id");
         }
     },
     async deleteAllGroups() {
