@@ -38,10 +38,12 @@ export const groupMongoStore = {
     async deleteAllGroups() {
         await GroupMongoose.deleteMany({});
     },
-    async updateGroup(updatedGroup) {
-        const group = await GroupMongoose.findOne({ _id: updatedGroup._id });
+    async updateGroup(groupID, updatedGroup) {
+        const group = await GroupMongoose.findOne({ _id: groupID._id });
         group.title = updatedGroup.title;
-        group.img = updatedGroup.img;
-        await group.save();
+        // group.img = updatedGroup.img;
+        const updatedGroupObj = await group.save();
+        return updatedGroupObj;
     },
+    
 };

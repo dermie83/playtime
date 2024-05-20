@@ -9,7 +9,7 @@
       <th>Range</th>
       <th>latitude</th>
       <th>longitude</th>
-      <th>Temp</th>
+      <th>Img</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -40,40 +40,11 @@
       <td>
         {{longitude}}
       </td>
-      {{!-- <script>
-        const fileInput = document.querySelector(".file-input");
-        fileInput.onchange = () => {
-          if (fileInput.files.length > 0) {
-            const fileName = document.querySelector(".file-name");
-            fileName.textContent = fileInput.files[0].name;
-          }
-        };
-      </script>
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-25x25">
-            <img src={{img}}>
-          </figure>
-        </div>
-        <div class="card-content">
-          <form action="/group/{{group._id}}/uploadimage" method="POST" enctype="multipart/form-data">
-            <div id="file-select" class="file has-name is-fullwidth">
-              <label class="file-label"> <input class="file-input" name="imagefile" type="file" name="resume" accept="image/png, image/jpeg">
-                <span class="file-cta">
-                  <span class="file-icon">
-                    <i class="fas fa-upload"></i>
-                  </span>
-                  <span class="file-label">
-                    Choose a file…
-                  </span>
-                </span>
-                <span class="file-name"></span>
-              </label>
-              <button type="submit" class="button is-info">Upload</button>
-            </div>
-          </form>
-        </div>
-      </div> --}}
+      <td>
+        <figure class="image is-256x256">
+          <img src={{img}}>
+        </figure>
+      </td>
       <td>
         <a href="/group/{{../group._id}}/deletegroup/{{_id}}" class="ui icon button">
           <i class="fas fa-trash"></i>
@@ -86,7 +57,7 @@
       </td>
       <td>
         <a href="/group/{{../group._id}}/api/{{_id}}" class="ui icon button">
-          <i class="fas fa-edit"></i>
+          <i class="fas fa-cloud"></i>
         </a>
       </td>
      </tr>

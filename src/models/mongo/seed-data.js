@@ -24,12 +24,10 @@ export const seedData = {
         _model: "Group",
         myTestGroup: {
             title: "Test Group 1",
-            img: "http://res.cloudinary.com/dbx8kj5x4/image/upload/v1712088094/erxlob4tqjqne8wfdjr8.jpg",
             userid: "->users.bart"
         },
         myTestGroup2: {
             title: "Test Group 2",
-            img: "http://res.cloudinary.com/dbx8kj5x4/image/upload/v1712088094/erxlob4tqjqne8wfdjr8.jpg",
             userid: "->users.bart"
         }
     },

@@ -9,12 +9,12 @@
 </script>
 <div class="card">
   <div class="card-image">
-    <figure class="image is-256x256">
-      <img src={{img}}>
+    <figure class="image is-25x25">
+      <img src={{group.lighthouses.img}}>
     </figure>
   </div>
   <div class="card-content">
-    <form action="/group/{{group._id}}/uploadimage" method="POST" enctype="multipart/form-data">
+    <form action="/group/{{group._id}}/uploadimage/{{lighthouse._id}}" method="POST" enctype="multipart/form-data">
       <div id="file-select" class="file has-name is-fullwidth">
         <label class="file-label"> <input class="file-input" name="imagefile" type="file" name="resume" accept="image/png, image/jpeg">
           <span class="file-cta">

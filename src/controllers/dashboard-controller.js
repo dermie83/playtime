@@ -38,6 +38,43 @@ export const dashboardController = {
             return h.redirect("/dashboard");
         },
     },
+
+    editGroup: {
+        handler: async function (request, h) {
+          const loggedInUser = request.auth.credentials;
+          const group = await db.groupStore.getGroupById(request.params.id);
+    
+          const viewData = {
+            title: "Edit Club",
+            user: loggedInUser,
+            group: group,
+          };
+          return h.view("edit-group-view", viewData);
+        },
+      },
+
+      updateGroup: {
+        validate: {
+          payload: GroupSpec,
+          options: { abortEarly: false },
+          failAction: function (request, h, error) {
+            return h.view("edit-group-view", { title: "Edit group error", errors: error.details }).takeover().code(400);
+          },
+        },
+        handler: async function (request, h) {
+          console.log("Editing groupID: ", request.params.id);
+          const group = await db.groupStore.getGroupById(request.params.id);
+          const groupID = group._id;
+    
+          const updatedGroup = {
+            title: request.payload.title,
+          };
+    
+          await db.groupStore.updateGroup(groupID, updatedGroup);
+          return h.redirect("/dashboard");
+        },
+      },
+
     deleteGroup: {
         handler: async function (request, h) {
             const group = await db.groupStore.getGroupById(request.params.id);
