@@ -19,6 +19,8 @@ export const weatherController = {
             const result = await axios.get(requestUrl);
             if (result.status === 200) {
                 console.log(result);
+
+                report.title = lighthouse.title
                 
                 const reading = result.data.current;
                 report.lat = Number(result.data.lat)

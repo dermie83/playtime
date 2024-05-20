@@ -15,6 +15,7 @@ import { webRoutes } from "./web-routes.js";
 import { connectDb } from "./models/db.js";
 import { apiRoutes } from "./api-routes.js";
 import { validate } from "./api/jwt-utils.js";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const swaggerOptions = {

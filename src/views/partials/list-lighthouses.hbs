@@ -41,6 +41,7 @@
         {{longitude}}
       </td>
       <td>
+      <td>
         <figure class="image is-256x256">
           <img src={{img}}>
         </figure>
@@ -56,13 +57,23 @@
         </a>
       </td>
       <td>
+        <a href="/group/{{../group._id}}/editimage/{{_id}}" class="ui icon button">
+          <i class="fas fa-camera"></i>
+        </a>
+      </td>
+      <td>
         <a href="/group/{{../group._id}}/api/{{_id}}" class="ui icon button">
           <i class="fas fa-cloud"></i>
         </a>
       </td>
+      <td>
+        <a id="place-link-location" class="button is-half" href="https://www.google.com/maps/?q={{latitude}}%2C{{longitude}}"
+            target="_blank"><i class="fas fa-location-dot fa-lg mr-2"></i> View Place</a>
+         </td>
      </tr>
     {{/each}}
   </tbody>
 </table>
+
 
 {{report}}

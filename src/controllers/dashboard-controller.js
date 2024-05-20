@@ -8,14 +8,38 @@ export const dashboardController = {
             console.log("loggedInUser ", loggedInUser._id);
             // If logged in user, render dashboard view
             const groups = await db.groupStore.getUserGroups(loggedInUser._id);
+
+            const lighthouses = [];
+
+            for (let i=0; i<groups.length; i++) {
+                lighthouses.push(groups[i]._id);
+            };
+
+            const lighthouse = await db.lighthouseStore.getLighthousesByGroupId(lighthouses)
+
+            const lat = [];
+            const lng = [];
+            for (let i=0; i<lighthouse.length; i++) {
+                lat.push(lighthouse[i].latitude);
+
+            };
+            for (let i=0; i<lighthouse.length; i++) {
+                lng.push(lighthouse[i].longitude);
+
+            };
+            
+
             groups.sort((a, b) => (a.title > b.title ? 1 : -1));
 
             const viewData = {
                 title: "My Lighthouse Dashboard",
                 user: loggedInUser,
                 groups: groups,
+                lighthouse:lighthouse,
+                lat:lat,
+                lng:lng,
             };
-
+            console.log(viewData)
             return h.view("dashboard-view", viewData);
         },
     },

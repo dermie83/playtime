@@ -18,6 +18,21 @@ export const lighthouseController = {
             return h.view("edit-lighthouse-view", viewData);
         },
     },
+    imageIndex: {
+        handler: async function (request, h) {
+            const group = await db.groupStore.getGroupById(request.params.id);
+            console.log("groupID", group._id);
+            const lighthouse = await db.lighthouseStore.getLighthouseById(request.params.lighthouseid);
+            console.log("lighthouseID", lighthouse);
+            const viewData = {
+                title: "Lighthouses",
+                group: group,
+                lighthouse: lighthouse,
+            };
+            console.log("viewdata", viewData);
+            return h.view("edit-image-view", viewData);
+        },
+    },
     updateLighthouse: {
         validate: {
             payload: LighthouseSpec,
@@ -59,6 +74,7 @@ export const lighthouseController = {
                 if (Object.keys(file).length > 0) {
                     const url = await imageStore.uploadImage(imagePayload.imagefile);
                     console.log("URL ",url);
+                    
                     const newImg = {
                         img:url,
                     };
