@@ -1,5 +1,14 @@
 # Lighthouse Changelog
 
+## version 0.5.0
+- Weather API added to display realtime weather trends at location
+- Googlemap API added to show POI locations
+- typescript library added for extension into svelte development
+
+## version 0.4.2
+- Image controller created for images
+- Group edit functionality added
+
 ## version 0.4.1
 - introduce image upload function
 - created a cloudinary account to store and upload images
